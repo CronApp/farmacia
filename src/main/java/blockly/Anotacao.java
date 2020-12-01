@@ -15,68 +15,19 @@ public static final int TIMEOUT = 300;
 
 /**
  *
- * @param listaAnotacoes
  * @return Var
  */
-// Anotacao
-public static Var gerenciar(Var listaAnotacoes) throws Exception {
+// Anotacoes
+public static Var ListarAnotacoes() throws Exception {
  return new Callable<Var>() {
 
    private Var lista = Var.VAR_NULL;
-   private Var ids = Var.VAR_NULL;
-   private Var anotacao = Var.VAR_NULL;
-   private Var exception = Var.VAR_NULL;
 
    public Var call() throws Exception {
 
     lista =
-    cronapi.list.Operations.newList();
-
-    try {
-
-        System.out.println(listaAnotacoes.getObjectAsString());
-
-        ids =
-        cronapi.list.Operations.newList();
-
-        for (Iterator it_anotacao =
-        cronapi.json.Operations.toJson(listaAnotacoes).iterator(); it_anotacao.hasNext();) {
-            anotacao = Var.valueOf(it_anotacao.next());
-
-            if (
-            Var.valueOf(
-            cronapi.logic.Operations.isNullOrEmpty(
-            cronapi.json.Operations.getJsonOrMapField(anotacao,
-            Var.valueOf("exclusao"))).getObjectAsBoolean() &&
-            cronapi.logic.Operations.isNullOrEmpty(
-            cronapi.json.Operations.getJsonOrMapField(anotacao,
-            Var.valueOf("id"))).getObjectAsBoolean()).getObjectAsBoolean()) {
-
-                cronapi.database.Operations.insert(Var.valueOf("app.entity.Anotacao"),Var.valueOf("nome",
-                cronapi.json.Operations.getJsonOrMapField(anotacao,
-                Var.valueOf("nome"))),Var.valueOf("user",
-                blockly.UserManager.obterIdUsuario()));
-            } else if (
-            Var.valueOf(
-            /*# sourceMappingStart=_XT#3P}}HRB{@y96)QmG */
-            cronapi.logic.Operations.isNullOrEmpty(
-            cronapi.json.Operations.getJsonOrMapField(anotacao,
-            Var.valueOf("exclusao"))).negate().getObjectAsBoolean() &&
-            /*# sourceMappingStart=sk!$prdy~m:6;@KmC56Z */
-            cronapi.logic.Operations.isNullOrEmpty(
-            cronapi.json.Operations.getJsonOrMapField(anotacao,
-            Var.valueOf("id"))).negate().getObjectAsBoolean()).getObjectAsBoolean()) {
-
-                cronapi.database.Operations.remove(Var.valueOf("app.entity.Anotacao"),anotacao);
-            }
-        } // end for
-     } catch (Exception exception_exception) {
-          exception = Var.valueOf(exception_exception);
-
-        cronapi.util.Operations.log(
-        Var.valueOf("General"),
-        Var.valueOf("SEVERE"), exception, Var.VAR_NULL);
-     }
+    cronapi.database.Operations.query(Var.valueOf("app.entity.Anotacao"),Var.valueOf("select a from Anotacao a where a.user.id = :userId"),Var.valueOf("userId",
+    blockly.UserManager.ObterIdUsuario()));
     return lista;
    }
  }.call();
@@ -84,35 +35,48 @@ public static Var gerenciar(Var listaAnotacoes) throws Exception {
 
 /**
  *
- * @return Var
+ * @param listaAnotacoes
  */
 // Descreva esta função...
-public static Var listar() throws Exception {
- return new Callable<Var>() {
+public static void Gerenciar(Var listaAnotacoes) throws Exception {
+  new Callable<Var>() {
 
-   private Var lista = Var.VAR_NULL;
-   private Var exception = Var.VAR_NULL;
+   private Var anotacao = Var.VAR_NULL;
+   private Var contemId = Var.VAR_NULL;
+   private Var contemExcluir = Var.VAR_NULL;
 
    public Var call() throws Exception {
 
-    lista =
-    cronapi.list.Operations.newList();
+    for (Iterator it_anotacao =
+    cronapi.json.Operations.toJson(listaAnotacoes).iterator(); it_anotacao.hasNext();) {
+        anotacao = Var.valueOf(it_anotacao.next());
 
-    try {
+        contemId =
+        cronapi.logic.Operations.isNullOrEmpty(
+        cronapi.json.Operations.getJsonOrMapField(anotacao,
+        Var.valueOf("id")));
 
-        lista =
-        cronapi.database.Operations.query(Var.valueOf("app.entity.Anotacao"),Var.valueOf("select a from Anotacao a"));
-     } catch (Exception exception_exception) {
-          exception = Var.valueOf(exception_exception);
+        contemExcluir =
+        cronapi.logic.Operations.isNullOrEmpty(
+        cronapi.json.Operations.getJsonOrMapField(anotacao,
+        Var.valueOf("exclusao")));
 
-        cronapi.util.Operations.log(
-        Var.valueOf("General"),
-        Var.valueOf("SEVERE"), exception, Var.VAR_NULL);
+        if (
+        Var.valueOf(contemId.getObjectAsBoolean() && contemExcluir.getObjectAsBoolean()).getObjectAsBoolean()) {
 
-        cronapi.util.Operations.throwException(
-        Var.valueOf("Erro ao obter lista de anotações"));
-     }
-    return lista;
+            cronapi.database.Operations.insert(Var.valueOf("app.entity.Anotacao"),Var.valueOf("nome",
+            cronapi.json.Operations.getJsonOrMapField(anotacao,
+            Var.valueOf("nome"))),Var.valueOf("user",
+            blockly.UserManager.ObterIdUsuario()));
+        } else if (
+        Var.valueOf(
+        contemId.negate().getObjectAsBoolean() &&
+        contemExcluir.negate().getObjectAsBoolean()).getObjectAsBoolean()) {
+
+            cronapi.database.Operations.remove(Var.valueOf("app.entity.Anotacao"),anotacao);
+        }
+    } // end for
+   return Var.VAR_NULL;
    }
  }.call();
 }

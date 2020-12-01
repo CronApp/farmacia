@@ -1,0 +1,35 @@
+<div id="starter" ng-init="cronapi.client('js.blockly.Anotacao.Inicializar').run()" ng-destroy="" data-component="crn-start" screen-params=""> 
+  <ion-view class="pane"> 
+    <ion-header-bar align-title="center" class="bar bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
+      <div class="buttons buttons-left header-item"> 
+        <button class="button button-clear" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> </button> 
+      </div> 
+      <h1 class="title">Anotações</h1> 
+      <div class="buttons buttons-right header-item"> 
+        <button class="button button-clear" menu-toggle="right" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> </button> 
+      </div> 
+    </ion-header-bar> 
+    <ion-content data-component="crn-ion-content" class="scroll-content has-header"> 
+      <label class="item item-input item-floating-label component-holder" data-component="crn-input-floating" id="crn-input-floating-815170"><span class="input-label">Anotação</span> <input type="text" aria-label="Aria Label Text" placeholder="Insira uma anotação" ng-model="vars.nome" mask="" keyboard=""></label> 
+      <div class="component-holder ng-binding ng-scope" data-component="crn-button-bar" id="crn-button-bar-749321"> 
+        <div class="button-bar"> 
+          <button class="component-holder button button-block button-positive" data-component="crn-button" type="submit" ng-click="cronapi.client('js.blockly.Anotacao.InserirAnotacaoBancoLocal').run(vars.nome)" xattr-size="" xattr-type="" xattr-theme="button-positive" xattr-fullsize="button-block"><i class="icon icon-left ion ion-android-add-circle"></i><span>Adicionar</span></button> 
+          <button class="component-holder button button-block button-positive" data-component="crn-button" type="submit" ng-click="cronapi.client('js.blockly.Anotacao.SincroniaBancoLocalParaBancoRemoto').run()" xattr-size="" xattr-type="" xattr-theme="button-positive" xattr-fullsize="button-block"><i class="icon icon-left ion ion-ios-refresh"></i><span>Sincronizar</span></button> 
+        </div> 
+      </div> 
+      <ion-list crn-datasource="" class="listCanSwipe component-holder" id="crn-item-swipe-921719" data-component="crn-item-swipe" ng-repeat="rowData in vars.listaAnotacoes" ng-hide="rowData.exclusao"> 
+        <ion-item class="item" id="crn-list-item-swipe4687" data-component="crn-item-swipe"> 
+          <h2 style="display: inline">{{rowData.nome}}</h2> 
+          <div id="crn-item-options4687" class="component-holder" data-component="crn-item-options"> 
+            <div class="crn-item-options" data-item="true"> 
+              <ion-option-button id="crn-option-button4687-2" data-component="crn-button" class="button-assertive button" ng-click="cronapi.client('js.blockly.Anotacao.ExcluirAnotacaoBancoLocal').run(rowData)"> 
+                <i class="ion ion-trash-a"></i> 
+                <span>Delete</span> 
+              </ion-option-button> 
+            </div> 
+          </div> 
+        </ion-item> 
+      </ion-list> 
+    </ion-content> 
+  </ion-view> 
+</div>

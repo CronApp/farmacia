@@ -202,7 +202,12 @@ StimulsoftHelper.prototype.getParamsFromFilter = function(datasource) {
     var column = this.getColumnByName(datasource, r.field);
     var type = "String";
     if (column) {
-      type = column.type();
+      try {
+        type = column.type();
+      }
+      catch (e) {
+        type = null;
+      }
       if (!type)
         type = column._type.ssTypeName;
       if (!type)

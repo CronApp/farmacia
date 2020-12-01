@@ -16,7 +16,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -25,7 +25,7 @@
                 </excludes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -42,6 +42,18 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>io.cronapp</groupId>
+                <artifactId>cronapp-compile-plugin</artifactId>
+                <version>2.7.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -86,6 +98,19 @@
             <url>https://github.com/CronApp/boleto-plugin</url>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>plugins-libs-release</id>
+            <name>plugins-artifactory-cronapp-release</name>
+            <url>https://artifactory.cronapp.io/libs-release</url>
+            <layout>default</layout>
+        </pluginRepository>
+        <pluginRepository>
+            <id>plugins-libs-snapshot</id>
+            <name>plugins-artifactory-cronapp-snapshot</name>
+            <url>https://artifactory.cronapp.io/libs-snapshot</url>
+        </pluginRepository>
+    </pluginRepositories>
     <dependencies>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -140,7 +165,7 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-java</artifactId>
-            <version>2.7.4</version>
+            <version>2.7.11</version>
             <exclusions>
                 <exclusion>
                     <artifactId>commons-lang3</artifactId>
@@ -155,7 +180,7 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapp-framework-java</artifactId>
-            <version>2.7.4</version>
+            <version>2.7.8</version>
             <exclusions>
                 <exclusion>
                     <artifactId>jersey-media-moxy</artifactId>
@@ -171,7 +196,7 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>olingo-odata2-jpa-processor-core</artifactId>
-            <version>2.7.0</version>
+            <version>2.7.9</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
