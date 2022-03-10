@@ -38,4 +38,12 @@
             <property name="eclipselink.query-results-cache" value="false"/>
         </properties>
     </persistence-unit>
+    <persistence-unit name="workflow" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>java:comp/env/jdbc/workflow</non-jta-data-source>
+        <properties>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+            <property name="cronapp.diagram.namespace" value="workflow"/>
+        </properties>
+    </persistence-unit>
 </persistence>
