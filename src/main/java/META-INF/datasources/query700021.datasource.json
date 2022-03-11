@@ -1,0 +1,95 @@
+{
+  "customId": "query700021",
+  "queryName": "cliente-reports",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Cliente",
+  "entityFullName": "farmacia.entity.Cliente",
+  "query": {
+    "isEmpty": true,
+    "isRawSql": true,
+    "sqlContent": "select c from Cliente c, ClienteVenda cv \nwhere cv.cliente.id \u003d c.id and cv.venda.id \u003d :vendaId",
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "vendaId",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "nome": null,
+    "cpf": null,
+    "telefone": null,
+    "email": null,
+    "cep": null,
+    "endereco": null,
+    "complemento": null,
+    "bairro": null,
+    "cidade": null,
+    "uf": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "nome": null,
+    "cpf": null,
+    "telefone": null,
+    "email": null,
+    "cep": null,
+    "endereco": null,
+    "complemento": null,
+    "bairro": null,
+    "cidade": null,
+    "uf": null
+  },
+  "security": {
+    "id": null,
+    "nome": null,
+    "cpf": null,
+    "telefone": null,
+    "email": null,
+    "cep": null,
+    "endereco": null,
+    "complemento": null,
+    "bairro": null,
+    "cidade": null,
+    "uf": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/farmacia/query700021/",
+  "audit": false
+}

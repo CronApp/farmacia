@@ -1,0 +1,111 @@
+{
+  "customId": "query793073",
+  "queryName": "venda-custom",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Venda",
+  "entityFullName": "farmacia.entity.Venda",
+  "query": {
+    "isEmpty": true,
+    "isRawSql": true,
+    "sqlContent": "select v from Venda v, ClienteVenda c where \nc.venda.id \u003d v.id \nAND (:clienteNome is null OR lower(c.cliente.nome) LIKE (CONCAT(\u0027%\u0027, lower(:clienteNome), \u0027%\u0027)) )",
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "clienteNome",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "valor": null,
+    "data": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "valor": null,
+    "data": null
+  },
+  "security": {
+    "id": null,
+    "valor": null,
+    "data": null
+  },
+  "calcFields": {
+    "nomeCliente": {
+      "blocklyClass": "blockly.Cliente",
+      "blocklyMethod": "obterNome",
+      "blocklyLanguage": "java",
+      "blocklyParams": [
+        {
+          "name": "Entidade\u003cfarmacia.entity.Venda\u003e",
+          "value": "data",
+          "type": "CUSTOM"
+        }
+      ],
+      "blocklyJson": {
+        "namespace": "blockly.Cliente",
+        "sourcePath": "src/main/java/blockly/Cliente.blockly",
+        "language": "java",
+        "class": "blockly.Cliente",
+        "methods": [
+          {
+            "name": "obterNome",
+            "hasReturn": "true",
+            "params": [
+              "Entidade\u003cfarmacia.entity.Venda\u003e"
+            ]
+          }
+        ]
+      },
+      "blocklyGETMethod": null,
+      "blocklyPOSTMethod": null,
+      "blocklyPUTMethod": null,
+      "blocklyDELETEMethod": null,
+      "blocklyFILTERMethod": null,
+      "blocklyCOUNTMethod": null
+    }
+  },
+  "calcFieldsSecurity": {
+    "nomeCliente": null
+  },
+  "calcFieldsProperties": {
+    "nomeCliente": {
+      "type": "String"
+    }
+  },
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/farmacia/query793073/",
+  "audit": false
+}

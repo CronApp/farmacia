@@ -1,0 +1,134 @@
+{
+  "customId": "query352024",
+  "queryName": "pedido-reports",
+  "sourceType": "entityFullName",
+  "baseEntity": null,
+  "blockly": null,
+  "entitySimpleName": "Pedido",
+  "entityFullName": "farmacia.entity.Pedido",
+  "query": {
+    "isValid": true,
+    "isEmpty": false,
+    "operationType": "object",
+    "type": "select",
+    "rulesEntity": [
+      {
+        "entity": "Pedido",
+        "namespace": "farmacia.entity.Pedido",
+        "alias": "p"
+      }
+    ],
+    "rulesSelect": [
+      {
+        "func": "get",
+        "field": "p.produto.nome",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.produto.precoVenda",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "p.quantidade",
+        "type": "integer"
+      },
+      {
+        "func": "get",
+        "field": "p.venda.valor",
+        "type": "double"
+      },
+      {
+        "func": "get",
+        "field": "p.venda.id",
+        "type": "string"
+      },
+      {
+        "func": "get",
+        "field": "p.venda.data",
+        "type": "date"
+      }
+    ],
+    "rulesGroupBy": [],
+    "rulesHaving": [],
+    "rulesOrderBy": [],
+    "rules": {
+      "condition": "AND",
+      "rules": [
+        {
+          "id": "p.venda.id",
+          "field": "p.venda.id",
+          "type": "string",
+          "input": "text",
+          "operator": "equal",
+          "value": ":vendaId",
+          "valueIsField": false
+        }
+      ],
+      "not": false,
+      "valid": true
+    },
+    "isRawSql": false,
+    "multiTenant": false,
+    "paginatorAutomatic": false,
+    "pagination": false
+  },
+  "queryParamsValues": [
+    {
+      "fieldName": "vendaId",
+      "fieldValue": ""
+    }
+  ],
+  "verbs": {
+    "GET": true,
+    "GETAuthorities": null,
+    "POST": true,
+    "POSTAuthorities": null,
+    "PUT": true,
+    "PUTAuthorities": null,
+    "DELETE": true,
+    "DELETEAuthorities": null,
+    "FILTER": true,
+    "FILTERAuthorities": null,
+    "COUNT": true,
+    "COUNTAuthorities": null
+  },
+  "events": {
+    "beforeInsert": null,
+    "beforeUpdate": null,
+    "beforeDelete": null,
+    "afterInsert": null,
+    "afterUpdate": null,
+    "afterDelete": null,
+    "onNavigate": null,
+    "onError": null
+  },
+  "defaultValues": {
+    "id": null,
+    "quantidade": null,
+    "produto": null,
+    "venda": null
+  },
+  "defaultValuesProperties": {
+    "id": null,
+    "quantidade": null,
+    "produto": null,
+    "venda": null
+  },
+  "security": {
+    "id": null,
+    "quantidade": null,
+    "produto": null,
+    "venda": null
+  },
+  "calcFields": {},
+  "calcFieldsSecurity": {},
+  "calcFieldsProperties": {},
+  "errorHandles": {
+    "primaryKey": null,
+    "foreignKey": null
+  },
+  "serviceUrl": "api/cronapi/odata/v2/farmacia/query352024/",
+  "audit": false
+}
