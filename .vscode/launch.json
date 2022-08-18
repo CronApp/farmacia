@@ -11,16 +11,6 @@
       "mainClass": "org.apache.catalina.startup.Bootstrap",
       "args": "start",
       "projectName": "io.cronapp.apps.farmacianovo"
-    },
-    {
-      "type": "java",
-      "name": "SpringBootMain:run",
-      "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "SpringBootMain",
-      "args": "${mvn spring-boot:run}",
-      "projectName": "io.cronapp.apps.farmacianovo"
     }
   ]
 }
