@@ -6,7 +6,6 @@
   <title ng-bind="$root.ionViewTitle">Pharma Manager</title> 
   <!-- Customs --> 
   <link href="node_modules/cronapp-framework-mobile-js/lib/ionic/css/ionic.css" rel="stylesheet"> 
-  <link href="node_modules/cronapp-framework-mobile-js/dist/css/app.css" rel="stylesheet"> 
   <link href="node_modules/cronapp-framework-mobile-js/dist/css/cronos.css" rel="stylesheet"> 
   <link href="css/app.css" rel="stylesheet"> 
   <script src="js/customModules.js"></script> 
@@ -14,7 +13,8 @@
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"> 
   <link rel="stylesheet" href="node_modules/ng-file-upload/dist/ng-file-upload.min.js"> 
   <link rel="stylesheet" href="node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js"> 
-  <link rel="stylesheet" href="node_modules/cronapp-framework-mobile-js/lib/kendo/kendo.default-v2.min.css"> 
+  <link rel="stylesheet" href="node_modules/cronapp-framework-mobile-js/dist/css/app.css"> 
+  <link id="themeStyleSheet" rel="stylesheet" href="node_modules/cronapp-framework-mobile-js/css/themes/material.min.css"> 
  </head> 
  <body> 
   <ion-nav-view role="main"></ion-nav-view> 
@@ -26,7 +26,7 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script> 
   <!-- Angular JS --> 
   <script src="node_modules/angular-aria/angular-aria.min.js"></script> 
-  <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script> 
+  <script src="node_modules/cronapp-ui-router/release/angular-ui-router.min.js"></script> 
   <script src="node_modules/angular-cookies/angular-cookies.min.js"></script> 
   <script src="node_modules/angular-resource/angular-resource.min.js"></script> 
   <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script> 
@@ -59,7 +59,7 @@
   <script src="js/events.js"></script> 
   <script src="js/hostApp.js"></script> 
   <script src="js/index.js"></script> 
-  <script src="node_modules/pace/pace.min.js"></script> 
+  <script src="node_modules/pace-js/pace.min.js"></script> 
   <script src="node_modules/cronapp-common-js/dist/js/parser.js"></script> 
   <script src="node_modules/cronapp-common-js/dist/js/datasource/datasource.js"></script> 
   <script src="node_modules/cronapp-common-js/dist/js/odata-filter-parser.js"></script> 
@@ -85,6 +85,7 @@
   <script src="node_modules/cronapp-lib-js/dist/js/kendo-ui/js/kendo.all.fixed.js"></script> 
   <script src="node_modules/cronapp-lib-js/dist/js/kendo-ui/js/cultures/kendo.culture.pt-BR.min.js"></script> 
   <script src="node_modules/cronapp-lib-js/dist/js/kendo-ui/js/jszip.min.js"></script> 
-  <script src="node_modules/cronapp-ion-tab-badge/dist/index.js"></script>  
+  <script src="node_modules/cronapp-ion-tab-badge/dist/index.js"></script> 
+  <script src="node_modules/signature_pad/dist/signature_pad.umd.min.js"></script>  
  </body>
 </html>
