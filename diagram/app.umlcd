@@ -1,13 +1,54 @@
 {
   "cells": [
     {
+      "allowConfiguration": false,
       "angle": 0,
       "apiPath": "src/main/webapp/raml/app/api.raml",
-      "attrs": {},
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-attrs-text": {
+          "fill": "#666",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-attrs-value": {
+          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-methods-text": {
+          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-name-text": {
+          "fill": "#000",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 12,
+          "font-weight": "bold"
+        }
+      },
       "chkApi": false,
       "dataSource": "jdbc/main",
       "disableCache": true,
       "id": "paperCell",
+      "methods": [],
       "namespace": "app",
       "position": {
         "x": 0,
@@ -26,6 +67,7 @@
         "height": 0,
         "width": 0
       },
+      "sqlDebugging": false,
       "type": "basic.Rect",
       "visionLikePackage": false,
       "z": 1
@@ -199,8 +241,8 @@
       "modelType": "Table",
       "name": "Anotacao",
       "position": {
-        "x": 94,
-        "y": 642
+        "x": 62,
+        "y": 646
       },
       "queries": [],
       "realName": "",
@@ -1444,31 +1486,30 @@
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
-        "role:Role",
-        "securable:Securable"
+        "texto:java.lang.String",
+        "data:java.util.Date"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 80,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "* id\nrole\nsecurable\n"
+          "text": "* id\ntexto\ndata\n"
         },
         ".uml-class-attrs-value": {
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 143,
-          "text": "Texto\nRole\nSecurable\n"
+          "ref-x": 156,
+          "text": "Texto\nTexto\nData\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
@@ -1480,7 +1521,198 @@
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-name-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "text": "Notas"
+        },
+        "rect": {
+          "stroke": "yellow",
+          "stroke-width": 2
+        }
+      },
+      "audit": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
+          "mask": "",
+          "isPrimaryKey": true,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
+        },
+        {
+          "name": "texto",
+          "type": "java.lang.String",
+          "dbName": "texto",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Texto",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
+        },
+        {
+          "name": "data",
+          "type": "java.util.Date",
+          "dbName": "data",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "Calendar.getInstance().getTime()",
+          "label": "Data",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "passwordPolicy": "none",
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
+        }
+      ],
+      "generateView": "Auto",
+      "id": "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
+      "isRest": "true",
+      "methods": [],
+      "modelType": "Table",
+      "name": "Notas",
+      "position": {
+        "x": 802,
+        "y": 626
+      },
+      "queries": [],
+      "realName": "",
+      "restSecurity": null,
+      "role": "Class",
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "size": {
+        "height": 130,
+        "width": 195
+      },
+      "swagger": false,
+      "tableName": "",
+      "tableScheme": null,
+      "type": "uml.Class",
+      "usePhysicalNames": false,
+      "z": 21
+    },
+    {
+      "angle": 0,
+      "attributes": [
+        "id:java.lang.String",
+        "role:Role",
+        "securable:Securable"
+      ],
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 80,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
+        },
+        ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": "* id\nrole\nsecurable\n"
+        },
+        ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "ref-x": 142,
+          "text": "Texto\nRole\nSecurable\n"
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,120)"
+        },
+        ".uml-class-methods-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": ""
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 40,
           "stroke": "#C2C2C2",
@@ -1631,7 +1863,7 @@
         "post": "Administrators",
         "put": "Administrators"
       },
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "sequences": [
         "",
@@ -1848,35 +2080,44 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "height": 370,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 360,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\naccessFailedCount\nemail\nemailConfirmed\nlockoutEnabled\nlockoutEnd\nname\nnormalizedEmail\nnormalizedUserName\npassword\nphoneNumber\nphoneNumberConfirmed\nsecurityStamp\ntwoFactorEnabled\nuserName\ntheme\npicture\n"
+          "text": "* id\naccessFailedCount\nemail\nemailConfirmed\nlockoutEnabled\nlockoutEnd\nname\nnormalizedEmail\nnormalizedUserName\npassword\nphoneNumber\nphoneNumberConfirmed\nsecurityStamp\ntwoFactorEnabled\nuserName\ntheme\npicture\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 156.34375,
+          "ref-x": 123,
           "text": "Texto\nInteiro\nTexto\nLógico\nLógico\nData e Hora\nTexto\nTexto\nTexto\nTexto\nTexto\nLógico\nTexto\nLógico\nTexto\nTexto\nImagem no Banco\n"
         },
         ".uml-class-methods-rect": {
-          "height": 30,
-          "transform": "translate(0,420)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,400)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "text": "User"
         },
         "rect": {
@@ -2487,8 +2728,8 @@
         ""
       ],
       "size": {
-        "height": 271.78211975097656,
-        "width": 264.5
+        "height": 270,
+        "width": 231
       },
       "tableName": "USER",
       "type": "uml.Class",
@@ -2504,14 +2745,13 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 80,
           "stroke": "#C2C2C2",
           "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": "* id\nrole\nuser\n"
@@ -2523,7 +2763,7 @@
           "text": "Texto\nRole\nUser\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "height": 20,
           "stroke": "#C2C2C2",
           "stroke-width": 1,
@@ -2535,7 +2775,7 @@
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
+          "fill": "#F0F0F0",
           "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "height": 40,
           "stroke": "#C2C2C2",
@@ -2686,7 +2926,7 @@
         "post": "Administrators",
         "put": "Administrators"
       },
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "sequences": [
         "",
@@ -3684,6 +3924,7 @@
       "cells": [
         "2b76b50a-bb57-4354-a653-b71b1450ebff",
         "36b875ac-204a-4346-82e4-aabbd2c6b202",
+        "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
         "2016ad54-a0f9-4337-ad10-694a48f0435c",
         "dcc00b32-aa33-47bd-bc4d-91da88f25cbc",
         "4cbe47fe-4f4b-43e9-960b-4b5cc2633aef",
@@ -3694,24 +3935,10 @@
       ],
       "groupPositions": [
         {
-          "idCell": "53b97115-f8a3-4221-9ce6-bad2672b8bd5",
+          "idCell": "fbe4a477-8332-4235-a9a2-5db4a56fa3d0",
           "position": {
-            "x": 302,
-            "y": 365
-          }
-        },
-        {
-          "idCell": "36b875ac-204a-4346-82e4-aabbd2c6b202",
-          "position": {
-            "x": 58,
-            "y": 365
-          }
-        },
-        {
-          "idCell": "63e82a31-b1a8-491a-a527-09f8cae44ddb",
-          "position": {
-            "x": 94,
-            "y": 642
+            "x": 416,
+            "y": 562
           }
         },
         {
@@ -3719,6 +3946,34 @@
           "position": {
             "x": 50,
             "y": 65
+          }
+        },
+        {
+          "idCell": "53b97115-f8a3-4221-9ce6-bad2672b8bd5",
+          "position": {
+            "x": 302,
+            "y": 365
+          }
+        },
+        {
+          "idCell": "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
+          "position": {
+            "x": 802,
+            "y": 626
+          }
+        },
+        {
+          "idCell": "63e82a31-b1a8-491a-a527-09f8cae44ddb",
+          "position": {
+            "x": 62,
+            "y": 646
+          }
+        },
+        {
+          "idCell": "36b875ac-204a-4346-82e4-aabbd2c6b202",
+          "position": {
+            "x": 58,
+            "y": 365
           }
         }
       ]
