@@ -9,16 +9,22 @@ window.blockly.js.blockly.Chat = window.blockly.js.blockly.Chat || {};
  *
  *
  *
- * @author Fernando Santos
- * @since 18/09/2023, 16:23:08
+ * @author Igor Andrade
+ * @since 22/09/2023, 20:13:07
  *
  */
 window.blockly.js.blockly.Chat.IniciarChatArgs = [];
 window.blockly.js.blockly.Chat.IniciarChat = async function() {
- var retorna, mensagem, item;
+ var mensagem, resposta, item;
   //
-  this.cronapi.chat.renderChatMessage("testchat", 'Para iniciar o chat digite 1', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
+  this.cronapi.chat.renderChatMessage("testchat", 'Olá!', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
       item = sender_item;
+    //
+    this.cronapi.chat.renderChatMessage("testchat", 'Eu sou uma assistente virtual. Por favor, informe o seu nome.', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
+        item = sender_item;
+    }.bind(this), async function(sender_item) {
+        item = sender_item;
+    }.bind(this));
   }.bind(this), async function(sender_item) {
       item = sender_item;
   }.bind(this));
@@ -31,31 +37,35 @@ window.blockly.js.blockly.Chat.IniciarChat = async function() {
  *
  * @param mensagem
  *
- * @author Fernando Santos
- * @since 18/09/2023, 16:23:08
+ * @author Igor Andrade
+ * @since 22/09/2023, 20:13:07
  *
  */
 window.blockly.js.blockly.Chat.ResponderUsuarioArgs = [{ description: 'mensagem', id: '7537559c' }];
 window.blockly.js.blockly.Chat.ResponderUsuario = async function(mensagem) {
- var retorna, item;
+ var resposta, item;
   //
-  if (this.cronapi.object.getProperty(mensagem, 'text') == 1) {
+  resposta = this.cronapi.object.getProperty(mensagem, 'text').trim();
+  //
+  if (!this.cronapi.logic.isNullOrEmpty(resposta)) {
     //
-    this.cronapi.chat.renderChatMessage("testchat", 'Esse é um chat para demonstração. Assim que pudermos iniciaremos seu atendimento.', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
+    this.cronapi.chat.renderChatMessage("testchat", String(resposta) + String(', essa é uma demonstração do componente visual Cronapp Chat.'), this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
+        item = sender_item;
+      //
+      this.cronapi.chat.renderChatMessage("testchat", 'Até mais! :)', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
+          item = sender_item;
+      }.bind(this), async function(sender_item) {
+          item = sender_item;
+      }.bind(this));
+    }.bind(this), async function(sender_item) {
+        item = sender_item;
+    }.bind(this));
+  } else {
+    //
+    this.cronapi.chat.renderChatMessage("testchat", 'Por favor, informe um nome válido.', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
         item = sender_item;
     }.bind(this), async function(sender_item) {
         item = sender_item;
     }.bind(this));
   }
-  //
-  if (this.cronapi.object.getProperty(mensagem, 'text') == -1) {
-    //
-    this.cronapi.chat.renderChatMessage("crn-kendo-chat-845773", 'Esse é um chat para demonstração. Assim que pudermos iniciaremos seu atendimento.', this.cronapi.chat.chatUserObj('Cronapp', 'Cronapp', 'https://s3.amazonaws.com//beta-img.b2bstack.net/uploads/production/product/product_image/614/cronapp-nuvem.png'), async function(sender_item) {
-        item = sender_item;
-    }.bind(this), async function(sender_item) {
-        item = sender_item;
-    }.bind(this));
-  }
-  //
-  console.log(mensagem);
 }

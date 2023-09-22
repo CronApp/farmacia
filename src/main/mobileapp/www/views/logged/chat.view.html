@@ -1,13 +1,33 @@
-<style title="local"></style><div id="starter" ng-init="cronapi.client('js.blockly.Chat.IniciarChat').run()" ng-destroy="" data-component="crn-start" screen-params=""><ion-view class="pane">
-  <ion-header-bar align-title="center" class="bar bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar" crn-skin="css/skins/farmacia.css">
-    <div class="buttons buttons-left header-item">
-      <button class="button button-clear" menu-toggle="" data-component="crn-button" xattr-type="button-clear" ng-click="cronapi.callFunction('cronapi.screen.back').call()"> <i class="icon ion-arrow-left-c"></i> </button>
-    </div>
-    <h1 class="title">{{'Chat' | translate}}</h1>
-    <div class="buttons buttons-right header-item">
-      
-    </div>
-  </ion-header-bar>
+<style title="local"></style><div id="starter" ng-init="cronapi.client('js.blockly.Chat.IniciarChat').run()" ng-destroy="" data-component="crn-start" screen-params=""><ion-view class="pane" style="">
+  <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
+      <div side="left" class="buttons buttons-left header-item"> 
+        <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Categoria.inserting &amp;&amp; !Categoria.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
+         
+      </div> 
+      <h1 class="title">{{'Chat' | translate}}</h1> 
+      <div side="right" class="buttons buttons-right header-item"> 
+        <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button> 
+         
+      </div> 
+    </ion-header-bar>
   <ion-content data-component="crn-ion-content" class="scroll-content has-header">
   <kendo-chat id="testchat" chat-placeholder="Digite uma mensagem" ng-on-post-message="cronapi.client('js.blockly.Chat.ResponderUsuario').names('7537559c').run(chatMessage)" ng-on-send-message="" ng-on-typing-start="" ng-on-typing-end="" data-component="crn-kendo-chat" chat-username="Usuário" chat-user-image="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" chat-user-id="Usuário"><div data-role="chat" class="k-widget k-chat"><div class="k-message-list k-avatars" data-role="chat" aria-live="polite"><div class="k-message-list-content"><div cronapp="" class="k-message-group"><p class="k-author">Cronapp</p><img src="https://ide.cronapp.io/resources/favicon/favicon.svg" alt="Cronapp" class="k-avatar"><div class="k-message k-first"><time class="k-message-time">14:25:32</time><div class="k-bubble">Olá Usuário, este é o Cron Chat</div></div><div class="k-message k-last"><time class="k-message-time">14:25:32</time><div class="k-bubble">Seja bem vindo!</div></div></div><div me="" class="k-message-group k-alt"><img src="https://www.creph.com.br/assets/all/img/default.png" alt="User" class="k-avatar"><div class="k-message k-first"><time class="k-message-time">14:25:37</time><div class="k-bubble">Olá!</div></div><div class="k-message k-last"><time class="k-message-time">14:25:46</time><div class="k-bubble">Muito legal! :)</div></div></div></div></div><div class="k-message-box" data-role="chat"><label class="k-hidden" for="inputId_56884ad4-d5ca-4bb0-bc84-d352644d6410">Digite a mensagem</label><input type="text" class="k-input" id="inputId_56884ad4-d5ca-4bb0-bc84-d352644d6410" placeholder="Digite a mensagem"><button class="k-button k-flat k-button-icon k-button-send" title="Send message" aria-label="Send message"><svg version="1.1" ixmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" xml:space="preserve"><path d="M0,14.3c-0.1,0.6,0.3,0.8,0.8,0.6l14.8-6.5c0.5-0.2,0.5-0.6,0-0.8L0.8,1.1C0.3,0.9-0.1,1.1,0,1.7l0.7,4.2C0.8,6.5,1.4,7,1.9,7.1l8.8,0.8c0.6,0.1,0.6,0.1,0,0.2L1.9,8.9C1.4,9,0.8,9.5,0.7,10.1L0,14.3z"></path></svg></button></div><div class="k-toolbar-box" role="toolbar" style="display: none"></div></div></kendo-chat></ion-content>
-</ion-view></div>
+</ion-view>
+ <script type="text/ng-template" id="modal71889"><ion-modal-view>
+   <ion-header-bar align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" xattr-theme="bar-positive">
+     <div class="buttons">  
+     </div> 
+     <h1 class="title">Componente Chat</h1>
+     <div class="buttons">     <button class="button button-right button-positive" ng-click="cronapi.callFunction('cronapi.screen.hideIonicModal').call('modal71889')" on-touch="" rich-text-content="true" id="Fechar" crn-skin="" style="" xattr-theme="button-positive">Fechar</button> 
+     </div> 
+   </ion-header-bar>
+  <ion-content class="scroll-content has-header" data-component="crn-ion-content">
+  
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-87261" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">O Componente Chat é uma interface de comunicação que permite a integração com assistentes de conversação que possuem inteligência virtual, como por exemplo, o Watson Assistant. Para mais informações, consulte nossa documentação:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-711536" class="col-xs-12">&nbsp;</div>
+
+<a href="https://docs.cronapp.io/display/CRON2/Chat+mobile" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060" target="_blank" style="display:block;">Chat mobile</a>
+</ion-content>
+  </ion-modal-view></script>
+</div>
