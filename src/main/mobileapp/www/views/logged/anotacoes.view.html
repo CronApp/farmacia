@@ -1,5 +1,5 @@
 <div id="starter" ng-init="cronapi.client('js.blockly.Anotacao.inicializar').run()" ng-destroy="" data-component="crn-start" screen-params=""> 
-  <ion-view cache-view="false" hide-back-button="true" role="region" class="pane"> 
+  <ion-view cache-view="false" hide-back-button="true" role="region" class="pane" style=""> 
     <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
       <div side="left" class="buttons buttons-left header-item"> 
         <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Categoria.inserting &amp;&amp; !Categoria.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
@@ -7,7 +7,7 @@
       </div> 
       <h1 class="title">{{'Anotacoes' | translate}}</h1> 
       <div side="right" class="buttons buttons-right header-item"> 
-        <button aria-labelledby="right_plus_sr" class="button button-clear" data-component="crn-button" xattr-type="button-clear" ng-click="cronapi.client('js.blockly.Anotacao.inserir').run(vars.nome)"> <i class="icon ion-ios-plus-empty"></i> <span id="right_plus_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span> </button> 
+        <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button><button aria-labelledby="right_plus_sr" class="button button-clear" data-component="crn-button" xattr-type="button-clear" ng-click="cronapi.client('js.blockly.Anotacao.inserir').run(vars.nome)"> <i class="icon ion-ios-plus-empty"></i> <span id="right_plus_sr64731" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span> </button> 
         <button aria-labelledby="right_checkmark_sr" class="button button-clear" ng-click="cronapi.client('js.blockly.Anotacao.sincronizar').run()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-refresh"></i> <span id="right_checkmark_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Save' | translate}}</span> </button> 
       </div> 
     </ion-header-bar> 
@@ -41,4 +41,23 @@
       </div> 
     </ion-content> 
   </ion-view> 
+
+ <script type="text/ng-template" id="modal71889"><ion-modal-view>
+   <ion-header-bar align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" xattr-theme="bar-positive">
+     <div class="buttons">  
+     </div> 
+     <h1 class="title">Sincronizar off-line: PouchDB</h1>
+     <div class="buttons">     <button class="button button-right button-positive" ng-click="cronapi.callFunction('cronapi.screen.hideIonicModal').call('modal71889')" on-touch="" rich-text-content="true" id="Fechar" crn-skin="" style="" xattr-theme="button-positive">Fechar</button> 
+     </div> 
+   </ion-header-bar>
+  <ion-content class="scroll-content has-header" data-component="crn-ion-content">
+  
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-87261" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">O plugin do PouchDB possibilita criar bancos de dados personalizados na aplicação. Dessa forma, os dados podem ser armazenados localmente enquanto estiver off-line e, em seguida, sincronizados automaticamente com os bancos de dados do projeto assim que for reestabelecida a conexão com a internet. Para mais informações, consulte nossa documentação:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-711536" class="col-xs-12">&nbsp;</div>
+
+<a href="https://docs.cronapp.io/pages/viewpage.action?pageId=185964310" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060" target="_blank" style="display:block;">Sincronizar bancos de dados local e remoto - PouchDB</a><div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-97131" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">O componente visual fonte de dados também possui recurso de sincronização entre banco de dados local e remoto, veja exemplo desse recurso na tela de notas:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-66191" class="col-xs-12">&nbsp;</div><a href="https://docs.cronapp.io/display/CRON2/Componente+visual+fonte+de+dados" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-82281" target="_blank" style="display:block;">Componente visual fonte de dados</a></ion-content>
+  </ion-modal-view></script>
 </div>
