@@ -164,5 +164,8 @@
   "Anotacoes": "Notes",
   "Chat": "Chat",
   "Anotacao": "Annotation",
-  "Notas": "Notes"
+  "Notas": "Notes",
+  "Home": "",
+  "UserActivePicture": "",
+  "User.active.picture": "Photo"
 }

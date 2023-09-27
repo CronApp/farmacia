@@ -1,16 +1,35 @@
-<ion-view class="pane" role="region">
-  <ion-header-bar role="heading" align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" crn-skin="css/skins/farmacia.css">
-    <div class="buttons buttons-left header-item">
-      <button aria-labelledby="left_navicon_sr" class="button button-clear" menu-toggle="left" data-component="crn-button" xattr-type="button-clear">
-        <i class="icon ion-navicon"></i>
-        <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span>
-      </button>
-    </div>
-    <h1 class="title">{{'Home.view.Home' | translate }}</h1>
-    <div class="buttons buttons-right header-item">
-      
-    </div>
-  </ion-header-bar>
+<ion-view class="pane" role="region" style="">
+  <ion-header-bar role="heading" class="bar bar-header bar-default" xattr-theme="bar-default" data-component="crn-ion-header-bar">
+        <div side="left" class="buttons buttons-left header-item">
+            <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Notas.inserting &amp;&amp; !Notas.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-navicon"></i>
+                <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span>
+            </button>
+            
+        </div>
+        <h1 class="title">{{'Home.view.Home' | translate}}</h1>
+        <div side="right" class="buttons buttons-right header-item">
+            <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button>
+            
+        </div>
+    </ion-header-bar>
   <ion-content class="scroll-content has-header" data-component="crn-ion-content">
   <h3 data-component="crn-heading" class="col-xs-12 text-center margin-top" id="crn-heading-322622" xattr-position="text-center">{{'ProdutoMaisVendido' | translate}}</h3><div class="col-xs-12 component-holder" data-component="crn-chart" id="crn-chart-604815" ng-init="cronapi.server('blockly.dashboard.DashboardMobile.obterDados').run()"> <canvas id="chart4029" data-component="crn-chart" class="col-xs-12"></canvas></div><div style="height: 50px;" data-component="crn-spacer" id="crn-spacer-432782" class="col-xs-12">&nbsp;</div><h3 data-component="crn-heading" class="col-xs-12 margin-top text-center" id="crn-heading-327039" xattr-position="text-center">{{'FaturamentoPorDia' | translate}}</h3><div class="col-xs-12 component-holder" data-component="crn-chart" id="crn-chart-269328"> <canvas id="chart4454" data-component="crn-chart" class="col-xs-12"></canvas></div></ion-content>
 </ion-view>
+ <script type="text/ng-template" id="modal71889"><ion-modal-view>
+   <ion-header-bar align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" xattr-theme="bar-positive">
+     <div class="buttons">  
+     </div> 
+     <h1 class="title">Gráficos</h1>
+     <div class="buttons">     <button class="button button-right button-positive" ng-click="cronapi.callFunction('cronapi.screen.hideIonicModal').call('modal71889')" on-touch="" rich-text-content="true" id="Fechar" crn-skin="" style="" xattr-theme="button-positive">Fechar</button> 
+     </div> 
+   </ion-header-bar>
+  <ion-content class="scroll-content has-header" data-component="crn-ion-content">
+  
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-87261" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">O componente permite renderizar um gráfico criado a partir do bloco de programação Criar gráfico (servidor) ou Criar gráfico (cliente). Para saber mais sobre como desenvolver gráficos, consulte nossa documentação:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-711536" class="col-xs-12">&nbsp;</div>
+
+<a href="https://docs.cronapp.io/pages/viewpage.action?pageId=176662473" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060" target="_blank" style="display:block;">Gráfico</a>
+</ion-content>
+  </ion-modal-view></script>
