@@ -1,4 +1,4 @@
-<ion-view cache-view="false" hide-back-button="true" role="region" class="pane">
+<ion-view cache-view="false" hide-back-button="true" role="region" class="pane" style="">
     <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar">
         <div side="left" class="buttons buttons-left header-item">
             <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Cliente.inserting &amp;&amp; !Cliente.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear">
@@ -12,9 +12,9 @@
         </div>
         <h1 class="title">{{'Cliente' | translate}}</h1>
         <div side="right" class="buttons buttons-right header-item">
-            <button aria-labelledby="right_plus_sr" class="button button-clear" ng-if="!Cliente.inserting &amp;&amp; !Cliente.editing" ng-click="Cliente.startInserting()" data-component="crn-button" xattr-type="button-clear">
+            <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button><button aria-labelledby="right_plus_sr" class="button button-clear" ng-if="!Cliente.inserting &amp;&amp; !Cliente.editing" ng-click="Cliente.startInserting()" data-component="crn-button" xattr-type="button-clear">
                 <i class="icon ion-ios-plus-empty"></i>
-                <span id="right_plus_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span>
+                <span id="right_plus_sr46631" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span>
             </button>
             <button aria-labelledby="right_checkmark_sr" class="button button-clear" ng-if="Cliente.inserting || Cliente.editing" ng-click="Cliente.post()" data-component="crn-button" xattr-type="button-clear">
                 <i class="icon ion-ios-checkmark"></i>
@@ -94,3 +94,20 @@
     
 
 </div></ion-content></ion-view>
+ <script type="text/ng-template" id="modal71889"><ion-modal-view>
+   <ion-header-bar align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" xattr-theme="bar-positive">
+     <div class="buttons">  
+     </div> 
+     <h1 class="title">Editor de views</h1>
+     <div class="buttons">     <button class="button button-right button-positive" ng-click="cronapi.callFunction('cronapi.screen.hideIonicModal').call('modal71889')" on-touch="" rich-text-content="true" id="Fechar" crn-skin="" style="" xattr-theme="button-positive">Fechar</button> 
+     </div> 
+   </ion-header-bar>
+  <ion-content class="scroll-content has-header" data-component="crn-ion-content">
+  
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-87261" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">Com o Editor de views é simples personalizar suas páginas web, adicionando componentes e regras. Essa tela possui uma regra para alimentar automaticamente os campos de endereços a partir do CEP informado. Saiba mais consultando a nossa documentação:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-711536" class="col-xs-12">&nbsp;</div>
+
+<a href="https://docs.cronapp.io/display/CRON2/Editor+de+views" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060" target="_blank" style="display:block;">Editor de Views</a>
+</ion-content>
+  </ion-modal-view></script>
