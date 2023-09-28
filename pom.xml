@@ -16,15 +16,6 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
                 <directory>src/test/java</directory>
                 <includes>
                     <include>**</include>
@@ -35,6 +26,15 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -179,6 +179,11 @@
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cronapp</groupId>
+            <artifactId>cronapi-qrcode-plugin</artifactId>
+            <version>1.0.3</version>
         </dependency>
     </dependencies>
     <properties>

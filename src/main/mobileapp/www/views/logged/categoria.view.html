@@ -1,14 +1,12 @@
-<style title="local">
-
-</style><ion-view cache-view="false" hide-back-button="true" role="region" class="pane" style=""> 
-  <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar" crn-skin=""> 
+<ion-view cache-view="false" hide-back-button="true" role="region" class="pane" style=""> 
+  <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
     <div side="left" class="buttons buttons-left header-item"> 
       <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Categoria.inserting &amp;&amp; !Categoria.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
       <button aria-labelledby="left_arrowback_sr" class="button button-clear" ng-if="Categoria.inserting || Categoria.editing" ng-click="Categoria.cancel()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-arrow-back"></i> <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span> </button> 
     </div> 
     <h1 class="title">{{'Categoria' | translate}}</h1> 
     <div side="right" class="buttons buttons-right header-item"> 
-      <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button> 
+      <button aria-labelledby="right_plus_sr" class="button button-clear button-small" ng-click="cronapi.callFunction('cronapi.screen.showIonicModal').call('modal71889')" data-component="crn-button" xattr-type="button-clear" style="" xattr-size="button-small"> <i class="icon ion ion-ios-help-empty"></i> <span id="right_plus_sr" class="sr-only"></span> </button>
       <button aria-labelledby="right_plus_sr" class="button button-clear" ng-if="!Categoria.inserting &amp;&amp; !Categoria.editing" ng-click="Categoria.startInserting()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-plus-empty"></i> <span id="right_plus_sr55961" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span> </button> 
       <button aria-labelledby="right_checkmark_sr" class="button button-clear" ng-if="Categoria.inserting || Categoria.editing" ng-click="Categoria.post()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-checkmark"></i> <span id="right_checkmark_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Save' | translate}}</span> </button> 
     </div> 
@@ -30,10 +28,10 @@
           <label for="textinput-nome-23224" class="item item-input item-stacked-label" data-component="crn-input-floating"> <span class="input-label">{{'Nome' | translate}}</span> <input type="text" placeholder="Nome" ng-model="Categoria.active.nome" id="textinput-nome-23224" name="textinput-nome" mask="" required=""> </label> 
           <!-- NtoN  --> 
           <!-- NtoN  end--> 
-        </div> 
+        </div>
       </form> 
-    </div> 
-  </ion-content> 
+    </div>
+  </ion-content>
 </ion-view> 
 <script type="text/ng-template" id="modal71889"><ion-modal-view>
    <ion-header-bar align-title="center" class="bar bar-positive" data-component="crn-ion-header-bar" xattr-theme="bar-positive">
@@ -44,7 +42,11 @@
      </div> 
    </ion-header-bar>
   <ion-content class="scroll-content has-header" data-component="crn-ion-content">
-  <p xattr-position="text-center" style="font-size: var(--textNormalSize, 14px);" class="text-center" xattr-type="font-size: var(--textNormalSize, 14px);" data-component="crn-paragraph" id="crn-paragraph-909247" rich-text-content="true"></p><p>&nbsp;</p>
+  
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-87261" class="col-xs-12">&nbsp;</div>
+<p style="" class="col-xs-12">A lista avançada é um componente que permite a exibição de dados de forma organizada, semelhante a Grade utilizada nos formulários web, porém adaptada para os dispositivos móveis. Para mais informações, consulte nossa documentação:</p>
+<div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-711536" class="col-xs-12">&nbsp;</div>
 
-<p style="margin-left: 21px; margin-right: 21px; text-align: center;">A lista avançada é um componente que permite a exibição de dados de forma organizada, semelhante a Grade utilizada nos formulários web, porém adaptada para os dispositivos móveis. Para mais informações, consulte nossa documentação.</p><a href="https://docs.cronapp.io/pages/viewpage.action?pageId=145490456" class="color-default" style="" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060">Lista Avançada</a></ion-content>
+<a href="https://docs.cronapp.io/pages/viewpage.action?pageId=145490456" class="color-default col-xs-12" xattr-fullsize="display:block;" data-replace="true" text-theme="color-default" data-component="crn-anchor" id="crn-anchor-569060" target="_blank" style="display:block;">Lista Avançada</a>
+</ion-content>
   </ion-modal-view></script>
