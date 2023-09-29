@@ -167,5 +167,7 @@
   "Notas": "Notas",
   "Home": "",
   "UserActivePicture": "",
-  "User.active.picture": "Foto"
+  "User.active.picture": "Foto",
+  "Admin.server.out": "Erro ao contactar o servidor",
+  "LoginBlockly": ""
 }
