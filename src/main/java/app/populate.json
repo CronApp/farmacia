@@ -1,1 +1,945 @@
-[{"_class":"app.entity.User","id":"1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d","name":"Administrator","userName":"admin","normalizedUserName":"admin","email":"admin@cronapp.io","normalizedEmail":"admin@cronapp.io","emailConfirmed":true,"password":"$2a$10$LjzpM1Q3VoAtG2dTCCabNuW0/amVPjL3Iyvyi2Dj7NP.HngtzSewu","securityStamp":"972d8d0d-66b7-4638-8fdc-74845fba68a5","phoneNumberConfirmed":true,"twoFactorEnabled":true,"lockoutEnabled":false,"accessFailedCount":0},{"_class":"app.entity.Role","id":"2446125d-abeb-4d14-a630-422eecf18da6","name":"Administrators","normalizedName":"administrators","membershipEnabled":true,"builtIn":true},{"id":"9e2affd5-b4c3-4464-8188-459f87ec2f33","name":"Anonymous Users","normalizedName":"anonymous users","membershipEnabled":false,"builtIn":false,"_class":"app.entity.Role"},{"_class":"app.entity.Role","id":"423cca38-7203-4d41-859d-71a5069df3ff","name":"Authenticated Users","normalizedName":"authenticated users","membershipEnabled":false,"builtIn":true},{"id":"67574137-a038-4783-9e2d-43ca3fb51635","name":"Public","_class":"app.entity.Securable"},{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137","name":"Authenticated","_class":"app.entity.Securable"},{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962","name":"Administrators","_class":"app.entity.Securable"},{"_class":"app.entity.RoleSecurable","id":"8481c167-3752-4eca-9991-8087bd5fd14e","role":{"id":"9e2affd5-b4c3-4464-8188-459f87ec2f33"},"securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"}},{"_class":"app.entity.RoleSecurable","id":"3d556d78-8705-4dc4-953b-b91c0d981cea","role":{"id":"423cca38-7203-4d41-859d-71a5069df3ff"},"securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"}},{"id":"2a294fcc-8e73-4b1c-825b-eb56a2bb2fa2","role":{"id":"2446125d-abeb-4d14-a630-422eecf18da6"},"securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"_class":"app.entity.RoleSecurable"},{"id":"e2f100ca-80f8-40dc-863f-8e1b7817f87d","securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"pattern":"/views/admin/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"a69ab017-b686-4492-9d61-c794cc2d15a0","securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"pattern":"/api/security/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"d93cf46b-39ea-444d-8cc0-2f43469fa545","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/auth/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"f957af79-d53b-4278-a14d-ae7cf47d4cd6","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/index.html","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"4644e3ff-077d-4da0-be94-139f24e4e0a1","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/favicon.ico","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"e536b522-5c78-46b7-98fa-9f42a132834c","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/public/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"f3b8e19f-05dd-4a7d-96b5-d495677928e1","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/plugins/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"633abb0f-11e2-4b02-be3f-b167e01f8868","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/components/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"21f91e1f-36ac-41e8-83ff-d4f3f177a667","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/js/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"0545fe31-92f9-4eb1-92e1-d1f60445d041","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/lib/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"c9b5c025-bdac-4894-b805-057aefeaf1b8","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/css/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"bf4d7dda-c9bb-4fed-908b-8faf1d6df7ed","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/img/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"c194bbd0-f7e9-4b56-a908-7750f6612944","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/i18n/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"175ac546-3a86-4c2d-98a1-a84f91536f05","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/views/login.view.html","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"7ed2ead1-9fef-43c8-9108-5f80e57d491d","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/views/error/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"da28ce3c-e2e1-44a9-b8e2-61856ec2a4c5","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/views/public/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"63e95790-8fc2-42c4-9c03-b92f496c52a0","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/signin/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"41d93309-1c51-476f-abb3-c18788825bfd","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/device/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"e3199d58-9584-466b-8325-0db497475750","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/api/cronapi/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"69985908-725a-4c6d-8c39-afe217019102","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"},"pattern":"/views/logged/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"a1651054-1e7d-4443-8e41-524ec40c1165","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"},"pattern":"/api/rest/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"0e9e3102-5b68-4009-8e85-43e93353e069","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"},"pattern":"/changePassword","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"a8713f31-3fe6-4476-a4fd-22e9999c2ba4","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"},"pattern":"/changeTheme","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"bb3dfe9d-2fd9-47ff-a196-076fec7bd90c","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/services/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"54677d29-5864-4406-9ef9-220570147d9c","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/mutual/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"8a50ff18-47f3-42e1-abaf-805754673f5b","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/actuator/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"_class":"app.entity.UserRole","id":"f6dff76e-6460-4abc-b55b-7fef96716d18","user":{"id":"1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d"},"role":{"id":"2446125d-abeb-4d14-a630-422eecf18da6"}},{"id":"dd97932f-4870-46c4-9d95-0ec3dfcfe464","name":"Financeiro","_class":"app.entity.Securable"},{"id":"0aa21b2c-7dc5-4c03-b6b5-ac1c2fb48276","securable":{"id":"dd97932f-4870-46c4-9d95-0ec3dfcfe464"},"pattern":"/views/financeiro/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"11ee52fb-9230-4b45-ac65-2fda44f6062c","name":"Financeiro","membershipEnabled":true,"builtIn":true,"_class":"app.entity.Role"},{"id":"5109be38-7762-44d9-a1d2-82ab81856606","role":{"id":"11ee52fb-9230-4b45-ac65-2fda44f6062c"},"securable":{"id":"dd97932f-4870-46c4-9d95-0ec3dfcfe464"},"_class":"app.entity.RoleSecurable"},{"_class":"farmacia.entity.Marca","id":"DB69093E-335C-4DB4-946C-FEACF4F43589","nome":"Medicamentos S/A"},{"_class":"farmacia.entity.Marca","id":"D3ADCF05-4452-490E-9A5D-1F93A3790A2C","nome":"Genérico"},{"_class":"farmacia.entity.Categoria","id":"586AE693-4109-4657-B587-3E4DB7C1D0C3","nome":"Medicamentos"},{"_class":"farmacia.entity.Categoria","id":"378011A5-1C5C-44FA-887F-5EEF58AD4489","nome":"Genérico"},{"_class":"farmacia.entity.Categoria","id":"097D2DDF-424C-4CFD-BA37-9A006F6762BB","nome":"Higiene Pessoal"},{"_class":"farmacia.entity.Cliente","id":"86048A04-2C67-4082-BAD7-FC1B24CEE457","cpf":"53087169609","nome":"Maria Almeida","email":"maria@cronapp.io","telefone":"71995599323","cep":"41830494","endereco":"Rua Professor Leopoldo Amaral","bairro":"Pituba","cidade":"Salvador","complemento":"366","uf":"BA"},{"_class":"farmacia.entity.Cliente","id":"B58B770E-157E-4B6B-A2FC-4A9D76931E78","cpf":"8641583351","nome":"José da Silva","email":"jose@cronapp.io","telefone":"16616161616","cep":"41830495","endereco":"Rua Professor Leopoldo Amaral","bairro":"Pituba","cidade":"Salvador","complemento":" Edf. Empresarial Alto do Parque, 366","uf":"BA"},{"_class":"farmacia.entity.Fornecedor","id":"BC98B762-4FB8-4635-8F80-1258118114E0","cnpj":"24200149000182","nome":"Almeida Medicamentos e Produtos de Higiente","email":"almeida@cronapp.io","telefone":"71333333333"},{"_class":"farmacia.entity.Fornecedor","id":"B65872E4-9246-4FA0-8547-4715D1F30BAF","cnpj":"54156776000124","nome":"Cronapp Medicamentos","email":"cronapp@cronapp.io","telefone":"16616161616"},{"_class":"farmacia.entity.Produto","id":"2D99A01F-54EF-4E54-A2A9-A201B77FF42B","codigo":"1","nome":"Dipirona","precoCusto":"2.39","precoVenda":"4.19","categoria":{"id":"097D2DDF-424C-4CFD-BA37-9A006F6762BB"},"fornecedor":{"id":"BC98B762-4FB8-4635-8F80-1258118114E0"},"marca":{"id":"D3ADCF05-4452-490E-9A5D-1F93A3790A2C"}},{"_class":"farmacia.entity.Produto","id":"346DB7AF-8B18-41E2-A1B0-33013DCE90F0","codigo":"2","nome":"Paracetamol","precoCusto":"1.45","precoVenda":"3.5","categoria":{"id":"586AE693-4109-4657-B587-3E4DB7C1D0C3"},"fornecedor":{"id":"B65872E4-9246-4FA0-8547-4715D1F30BAF"},"marca":{"id":"DB69093E-335C-4DB4-946C-FEACF4F43589"}},{"_class":"farmacia.entity.StatusVenda","id":1,"descricao":"Aguardando liberação"},{"_class":"farmacia.entity.StatusVenda","id":2,"descricao":"Aprovado"},{"_class":"farmacia.entity.StatusVenda","id":3,"descricao":"Recusado"},{"_class":"farmacia.entity.Venda","id":"622b77cf-9033-4172-98ef-707fdba0c3f4","valor":"12.27","statusVenda":{"id":2}},{"_class":"farmacia.entity.Venda","id":"3d4d8467-206f-4106-8f4f-727c734f9edc","valor":"15.38","data":"2020-06-01","statusVenda":{"id":2}},{"_class":"farmacia.entity.Pedido","id":"F0C66CD0-44E4-4907-95E5-FBFD41AC95C6","quantidade":"2","produto":{"id":"2D99A01F-54EF-4E54-A2A9-A201B77FF42B"},"venda":{"id":"3d4d8467-206f-4106-8f4f-727c734f9edc"}},{"_class":"farmacia.entity.Pedido","id":"3E6E87C1-CDF5-4BB4-B2EE-CA2F4EFE7E10","quantidade":"3","produto":{"id":"2D99A01F-54EF-4E54-A2A9-A201B77FF42B"},"venda":{"id":"622b77cf-9033-4172-98ef-707fdba0c3f4"}},{"_class":"farmacia.entity.Pedido","id":"DCD59195-5403-4D26-BB6D-3D91707CA3BD","quantidade":"2","produto":{"id":"346DB7AF-8B18-41E2-A1B0-33013DCE90F0"},"venda":{"id":"3d4d8467-206f-4106-8f4f-727c734f9edc"}},{"_class":"farmacia.entity.ClienteVenda","id":"C08F8A77-EDD8-4205-8CC3-0D362E9A9482","cliente":{"id":"B58B770E-157E-4B6B-A2FC-4A9D76931E78"},"venda":{"id":"622b77cf-9033-4172-98ef-707fdba0c3f4"}},{"_class":"farmacia.entity.ClienteVenda","id":"DF27F162-8E4E-4129-A3D3-CB80726878D7","cliente":{"id":"86048A04-2C67-4082-BAD7-FC1B24CEE457"},"venda":{"id":"3d4d8467-206f-4106-8f4f-727c734f9edc"}},{"id":"9676a61c-7f38-4a45-8d68-391fac3f8f6d","name":"Vendedor","_class":"app.entity.Securable"},{"id":"00c9f172-0077-44f8-877d-351d2e7aec72","name":"Vendedor","membershipEnabled":true,"builtIn":true,"_class":"app.entity.Role"},{"id":"e111f027-0c96-4986-98ae-43451788df80","securable":{"id":"9676a61c-7f38-4a45-8d68-391fac3f8f6d"},"pattern":"/views/vendedor/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"b8848dac-d23f-4309-b59b-7dd0eb3b9057","role":{"id":"00c9f172-0077-44f8-877d-351d2e7aec72"},"securable":{"id":"9676a61c-7f38-4a45-8d68-391fac3f8f6d"},"_class":"app.entity.RoleSecurable"},{"id":"65825f1d-1b9c-475f-8d94-13bf011f1bd2","securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"pattern":"/views/financeiro/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"3493a8c0-935e-4ca5-ba45-330e784bdbe6","securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"pattern":"/views/vendedor/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"dd42acee-9e17-48d2-8c81-e5af7558bcdd","securable":{"id":"0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"},"pattern":"/app/","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"3624c270-e3e5-48b7-9335-796fbcb0516d","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635","name":"Public"},"pattern":"/app/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"a36e69cf-8cb1-4b53-a871-f6a46a507625","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635","name":"Public"},"pattern":"/api/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"8e6e838b-723b-4634-a0ec-24681f1479d8","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635","name":"Public"},"pattern":"/plugin/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"0c65c20b-09b3-429a-a3c7-312db32008fb","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137","name":"Authenticated"},"pattern":"/api/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"ab3aa549-f417-45f2-bd1c-160181c342c3","securable":{"id":"cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137","name":"Authenticated"},"pattern":"/rest/**","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"c1590a62-8ece-4bca-89b0-6f1b3362b3cc","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635"},"pattern":"/views/public/chat.view.html","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"},{"id":"fb3b6a35-1c30-4573-8747-58bf3c8d5906","securable":{"id":"67574137-a038-4783-9e2d-43ca3fb51635","name":"Public"},"pattern":"/mobileapp","getMethodAllowed":true,"headMethodAllowed":true,"putMethodAllowed":true,"postMethodAllowed":true,"patchMethodAllowed":true,"deleteMethodAllowed":true,"optionsMethodAllowed":true,"traceMethodAllowed":true,"_class":"app.entity.View"}]
+[
+  {
+    "_class": "app.entity.User",
+    "id": "1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d",
+    "name": "Administrator",
+    "userName": "admin",
+    "normalizedUserName": "admin",
+    "email": "admin@cronapp.io",
+    "normalizedEmail": "admin@cronapp.io",
+    "emailConfirmed": true,
+    "password": "$2a$10$LjzpM1Q3VoAtG2dTCCabNuW0/amVPjL3Iyvyi2Dj7NP.HngtzSewu",
+    "securityStamp": "972d8d0d-66b7-4638-8fdc-74845fba68a5",
+    "phoneNumberConfirmed": true,
+    "twoFactorEnabled": true,
+    "lockoutEnabled": false,
+    "accessFailedCount": 0
+  },
+  {
+    "_class": "app.entity.Role",
+    "id": "2446125d-abeb-4d14-a630-422eecf18da6",
+    "name": "Administrators",
+    "normalizedName": "administrators",
+    "membershipEnabled": true,
+    "builtIn": true
+  },
+  {
+    "id": "9e2affd5-b4c3-4464-8188-459f87ec2f33",
+    "name": "Anonymous Users",
+    "normalizedName": "anonymous users",
+    "membershipEnabled": false,
+    "builtIn": false,
+    "_class": "app.entity.Role"
+  },
+  {
+    "_class": "app.entity.Role",
+    "id": "423cca38-7203-4d41-859d-71a5069df3ff",
+    "name": "Authenticated Users",
+    "normalizedName": "authenticated users",
+    "membershipEnabled": false,
+    "builtIn": true
+  },
+  {
+    "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+    "name": "Public",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137",
+    "name": "Authenticated",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962",
+    "name": "Administrators",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "_class": "app.entity.RoleSecurable",
+    "id": "8481c167-3752-4eca-9991-8087bd5fd14e",
+    "role": {
+      "id": "9e2affd5-b4c3-4464-8188-459f87ec2f33"
+    },
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    }
+  },
+  {
+    "_class": "app.entity.RoleSecurable",
+    "id": "3d556d78-8705-4dc4-953b-b91c0d981cea",
+    "role": {
+      "id": "423cca38-7203-4d41-859d-71a5069df3ff"
+    },
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"
+    }
+  },
+  {
+    "id": "2a294fcc-8e73-4b1c-825b-eb56a2bb2fa2",
+    "role": {
+      "id": "2446125d-abeb-4d14-a630-422eecf18da6"
+    },
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "_class": "app.entity.RoleSecurable"
+  },
+  {
+    "id": "e2f100ca-80f8-40dc-863f-8e1b7817f87d",
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "pattern": "/views/admin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a69ab017-b686-4492-9d61-c794cc2d15a0",
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "pattern": "/api/security/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "d93cf46b-39ea-444d-8cc0-2f43469fa545",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/auth/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "f957af79-d53b-4278-a14d-ae7cf47d4cd6",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/index.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "4644e3ff-077d-4da0-be94-139f24e4e0a1",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/favicon.ico",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "e536b522-5c78-46b7-98fa-9f42a132834c",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/public/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "f3b8e19f-05dd-4a7d-96b5-d495677928e1",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/plugins/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "633abb0f-11e2-4b02-be3f-b167e01f8868",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/components/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "21f91e1f-36ac-41e8-83ff-d4f3f177a667",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/js/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "0545fe31-92f9-4eb1-92e1-d1f60445d041",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/lib/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "c9b5c025-bdac-4894-b805-057aefeaf1b8",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/css/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "bf4d7dda-c9bb-4fed-908b-8faf1d6df7ed",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/img/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "c194bbd0-f7e9-4b56-a908-7750f6612944",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/i18n/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "175ac546-3a86-4c2d-98a1-a84f91536f05",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/views/login.view.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "7ed2ead1-9fef-43c8-9108-5f80e57d491d",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/views/error/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "da28ce3c-e2e1-44a9-b8e2-61856ec2a4c5",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/views/public/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "63e95790-8fc2-42c4-9c03-b92f496c52a0",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/signin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "41d93309-1c51-476f-abb3-c18788825bfd",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/device/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "e3199d58-9584-466b-8325-0db497475750",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/api/cronapi/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "69985908-725a-4c6d-8c39-afe217019102",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"
+    },
+    "pattern": "/views/logged/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a1651054-1e7d-4443-8e41-524ec40c1165",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"
+    },
+    "pattern": "/api/rest/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "0e9e3102-5b68-4009-8e85-43e93353e069",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"
+    },
+    "pattern": "/changePassword",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a8713f31-3fe6-4476-a4fd-22e9999c2ba4",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137"
+    },
+    "pattern": "/changeTheme",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "bb3dfe9d-2fd9-47ff-a196-076fec7bd90c",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/services/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "54677d29-5864-4406-9ef9-220570147d9c",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/mutual/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "8a50ff18-47f3-42e1-abaf-805754673f5b",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/actuator/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "_class": "app.entity.UserRole",
+    "id": "f6dff76e-6460-4abc-b55b-7fef96716d18",
+    "user": {
+      "id": "1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d"
+    },
+    "role": {
+      "id": "2446125d-abeb-4d14-a630-422eecf18da6"
+    }
+  },
+  {
+    "id": "dd97932f-4870-46c4-9d95-0ec3dfcfe464",
+    "name": "Financeiro",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "0aa21b2c-7dc5-4c03-b6b5-ac1c2fb48276",
+    "securable": {
+      "id": "dd97932f-4870-46c4-9d95-0ec3dfcfe464"
+    },
+    "pattern": "/views/financeiro/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "11ee52fb-9230-4b45-ac65-2fda44f6062c",
+    "name": "Financeiro",
+    "membershipEnabled": true,
+    "builtIn": true,
+    "_class": "app.entity.Role"
+  },
+  {
+    "id": "5109be38-7762-44d9-a1d2-82ab81856606",
+    "role": {
+      "id": "11ee52fb-9230-4b45-ac65-2fda44f6062c"
+    },
+    "securable": {
+      "id": "dd97932f-4870-46c4-9d95-0ec3dfcfe464"
+    },
+    "_class": "app.entity.RoleSecurable"
+  },
+  {
+    "_class": "farmacia.entity.Marca",
+    "id": "DB69093E-335C-4DB4-946C-FEACF4F43589",
+    "nome": "Medicamentos S/A"
+  },
+  {
+    "_class": "farmacia.entity.Marca",
+    "id": "D3ADCF05-4452-490E-9A5D-1F93A3790A2C",
+    "nome": "Genérico"
+  },
+  {
+    "_class": "farmacia.entity.Categoria",
+    "id": "586AE693-4109-4657-B587-3E4DB7C1D0C3",
+    "nome": "Medicamentos"
+  },
+  {
+    "_class": "farmacia.entity.Categoria",
+    "id": "378011A5-1C5C-44FA-887F-5EEF58AD4489",
+    "nome": "Genérico"
+  },
+  {
+    "_class": "farmacia.entity.Categoria",
+    "id": "097D2DDF-424C-4CFD-BA37-9A006F6762BB",
+    "nome": "Higiene Pessoal"
+  },
+  {
+    "_class": "farmacia.entity.Cliente",
+    "id": "86048A04-2C67-4082-BAD7-FC1B24CEE457",
+    "cpf": "53087169609",
+    "nome": "Maria Almeida",
+    "email": "maria@cronapp.io",
+    "telefone": "71995599323",
+    "cep": "41830494",
+    "endereco": "Rua Professor Leopoldo Amaral",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "complemento": "366",
+    "uf": "BA"
+  },
+  {
+    "_class": "farmacia.entity.Cliente",
+    "id": "B58B770E-157E-4B6B-A2FC-4A9D76931E78",
+    "cpf": "8641583351",
+    "nome": "José da Silva",
+    "email": "jose@cronapp.io",
+    "telefone": "16616161616",
+    "cep": "41830495",
+    "endereco": "Rua Professor Leopoldo Amaral",
+    "bairro": "Pituba",
+    "cidade": "Salvador",
+    "complemento": " Edf. Empresarial Alto do Parque, 366",
+    "uf": "BA"
+  },
+  {
+    "_class": "farmacia.entity.Fornecedor",
+    "id": "BC98B762-4FB8-4635-8F80-1258118114E0",
+    "cnpj": "24200149000182",
+    "nome": "Almeida Medicamentos e Produtos de Higiente",
+    "email": "almeida@cronapp.io",
+    "telefone": "71333333333"
+  },
+  {
+    "_class": "farmacia.entity.Fornecedor",
+    "id": "B65872E4-9246-4FA0-8547-4715D1F30BAF",
+    "cnpj": "54156776000124",
+    "nome": "Cronapp Medicamentos",
+    "email": "cronapp@cronapp.io",
+    "telefone": "16616161616"
+  },
+  {
+    "_class": "farmacia.entity.Produto",
+    "id": "2D99A01F-54EF-4E54-A2A9-A201B77FF42B",
+    "foto":"iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGMWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDEgNzkuMTQ2Mjg5OSwgMjAyMy8wNi8yNS0yMDowMTo1NSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wOS0yOVQxMDo0OToxMS0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMDktMjlUMTE6MDU6MjgtMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMDktMjlUMTE6MDU6MjgtMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmVkMzEzYjA1LWUxYjUtOTk0MC1hZjY5LTUxNzY1OTNkMWFkMyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjc2NzI3NGUyLWQ1NmUtYWU0ZC05NTBlLTRmNjBhMWUzYWU2YSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmY0MDQ5OTQxLTNlNjktMmY0Yy1iODUwLTE0MTRhYjAzM2VlMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZjQwNDk5NDEtM2U2OS0yZjRjLWI4NTAtMTQxNGFiMDMzZWUxIiBzdEV2dDp3aGVuPSIyMDIzLTA5LTI5VDEwOjQ5OjExLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjUuMCAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWQzMTNiMDUtZTFiNS05OTQwLWFmNjktNTE3NjU5M2QxYWQzIiBzdEV2dDp3aGVuPSIyMDIzLTA5LTI5VDExOjA1OjI4LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjUuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+O3Ar7AAAKq1JREFUeJztvXeUZNdxH1xV996XOkxP3pnZnAPCAguAyCQFkAQoRlAMIiRRFE1LlijLgZaPje/7zGMf6Rw5HEkULVEWTVKJtJgAEgCFHIicsQFhd7HYvLM7eabDS/dWfX+87tkFAUrENM099mGdOTtvut/rfrde3bq/+lXVXRQR+Jn8eEJn+wb+T5KfKetNyM+U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",
+    "codigo": "1",
+    "nome": "Dipirona",
+    "precoCusto": "2.39",
+    "precoVenda": "4.19",
+    "categoria": {
+      "id": "097D2DDF-424C-4CFD-BA37-9A006F6762BB"
+    },
+    "fornecedor": {
+      "id": "BC98B762-4FB8-4635-8F80-1258118114E0"
+    },
+    "marca": {
+      "id": "D3ADCF05-4452-490E-9A5D-1F93A3790A2C"
+    }
+  },
+  {
+    "_class": "farmacia.entity.Produto",
+    "id": "346DB7AF-8B18-41E2-A1B0-33013DCE90F0",
+    "foto":"iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGMWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDEgNzkuMTQ2Mjg5OSwgMjAyMy8wNi8yNS0yMDowMTo1NSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wOS0yOVQxMDo0OToxMS0wMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMDktMjlUMTE6MDA6NTQtMDM6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMDktMjlUMTE6MDA6NTQtMDM6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmQzYzBmOWQwLThjYzgtYjg0MC1hMGQyLWEzMWJmNmYxMjNlNyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmUzMjhlYTM4LTAwOTEtYTc0Zi05NjZhLWM2Mzk5MTA2MDA0MyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjk5NTI3YjE4LTQ5ZTgtYmY0Yy1iOWY4LWU5ZTJiNDM5NDY5NyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OTk1MjdiMTgtNDllOC1iZjRjLWI5ZjgtZTllMmI0Mzk0Njk3IiBzdEV2dDp3aGVuPSIyMDIzLTA5LTI5VDEwOjQ5OjExLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjUuMCAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZDNjMGY5ZDAtOGNjOC1iODQwLWEwZDItYTMxYmY2ZjEyM2U3IiBzdEV2dDp3aGVuPSIyMDIzLTA5LTI5VDExOjAwOjU0LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjUuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kpLvLAAAM/9JREFUeJzdvXecpEW1N35OVT2pc5g8s7M5511YWVAUFRCUKFFAdAGFF1DRq756VQS8iFmvoiAIiAooIBkVQaLEBXbZwObZmdnJ0z2d+wlVdd4/emZYkpdtkN/n/s4f0z0d63yfU6e+59Sp00hE8L9F3myk+OoX4Ju87G2L+Hd98L9D8M3QmgBpHKZ/F1r/q8B6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",
+    "codigo": "2",
+    "nome": "Paracetamol",
+    "precoCusto": "1.45",
+    "precoVenda": "3.5",
+    "categoria": {
+      "id": "586AE693-4109-4657-B587-3E4DB7C1D0C3"
+    },
+    "fornecedor": {
+      "id": "B65872E4-9246-4FA0-8547-4715D1F30BAF"
+    },
+    "marca": {
+      "id": "DB69093E-335C-4DB4-946C-FEACF4F43589"
+    }
+  },
+  {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 1,
+    "descricao": "Aguardando liberação"
+  },
+  {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 2,
+    "descricao": "Aprovado"
+  },
+  {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 3,
+    "descricao": "Recusado"
+  },
+  {
+    "_class": "farmacia.entity.Venda",
+    "id": "622b77cf-9033-4172-98ef-707fdba0c3f4",
+    "valor": "12.27",
+    "statusVenda": {
+      "id": 2
+    }
+  },
+  {
+    "_class": "farmacia.entity.Venda",
+    "id": "3d4d8467-206f-4106-8f4f-727c734f9edc",
+    "valor": "15.38",
+    "data": "2020-06-01",
+    "statusVenda": {
+      "id": 2
+    }
+  },
+  {
+    "_class": "farmacia.entity.Pedido",
+    "id": "F0C66CD0-44E4-4907-95E5-FBFD41AC95C6",
+    "quantidade": "2",
+    "produto": {
+      "id": "2D99A01F-54EF-4E54-A2A9-A201B77FF42B"
+    },
+    "venda": {
+      "id": "3d4d8467-206f-4106-8f4f-727c734f9edc"
+    }
+  },
+  {
+    "_class": "farmacia.entity.Pedido",
+    "id": "3E6E87C1-CDF5-4BB4-B2EE-CA2F4EFE7E10",
+    "quantidade": "3",
+    "produto": {
+      "id": "2D99A01F-54EF-4E54-A2A9-A201B77FF42B"
+    },
+    "venda": {
+      "id": "622b77cf-9033-4172-98ef-707fdba0c3f4"
+    }
+  },
+  {
+    "_class": "farmacia.entity.Pedido",
+    "id": "DCD59195-5403-4D26-BB6D-3D91707CA3BD",
+    "quantidade": "2",
+    "produto": {
+      "id": "346DB7AF-8B18-41E2-A1B0-33013DCE90F0"
+    },
+    "venda": {
+      "id": "3d4d8467-206f-4106-8f4f-727c734f9edc"
+    }
+  },
+  {
+    "_class": "farmacia.entity.ClienteVenda",
+    "id": "C08F8A77-EDD8-4205-8CC3-0D362E9A9482",
+    "cliente": {
+      "id": "B58B770E-157E-4B6B-A2FC-4A9D76931E78"
+    },
+    "venda": {
+      "id": "622b77cf-9033-4172-98ef-707fdba0c3f4"
+    }
+  },
+  {
+    "_class": "farmacia.entity.ClienteVenda",
+    "id": "DF27F162-8E4E-4129-A3D3-CB80726878D7",
+    "cliente": {
+      "id": "86048A04-2C67-4082-BAD7-FC1B24CEE457"
+    },
+    "venda": {
+      "id": "3d4d8467-206f-4106-8f4f-727c734f9edc"
+    }
+  },
+  {
+    "id": "9676a61c-7f38-4a45-8d68-391fac3f8f6d",
+    "name": "Vendedor",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "00c9f172-0077-44f8-877d-351d2e7aec72",
+    "name": "Vendedor",
+    "membershipEnabled": true,
+    "builtIn": true,
+    "_class": "app.entity.Role"
+  },
+  {
+    "id": "e111f027-0c96-4986-98ae-43451788df80",
+    "securable": {
+      "id": "9676a61c-7f38-4a45-8d68-391fac3f8f6d"
+    },
+    "pattern": "/views/vendedor/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "b8848dac-d23f-4309-b59b-7dd0eb3b9057",
+    "role": {
+      "id": "00c9f172-0077-44f8-877d-351d2e7aec72"
+    },
+    "securable": {
+      "id": "9676a61c-7f38-4a45-8d68-391fac3f8f6d"
+    },
+    "_class": "app.entity.RoleSecurable"
+  },
+  {
+    "id": "65825f1d-1b9c-475f-8d94-13bf011f1bd2",
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "pattern": "/views/financeiro/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "3493a8c0-935e-4ca5-ba45-330e784bdbe6",
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "pattern": "/views/vendedor/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "dd42acee-9e17-48d2-8c81-e5af7558bcdd",
+    "securable": {
+      "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
+    },
+    "pattern": "/app/",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "3624c270-e3e5-48b7-9335-796fbcb0516d",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/app/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a36e69cf-8cb1-4b53-a871-f6a46a507625",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/api/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "8e6e838b-723b-4634-a0ec-24681f1479d8",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/plugin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "0c65c20b-09b3-429a-a3c7-312db32008fb",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137",
+      "name": "Authenticated"
+    },
+    "pattern": "/api/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "ab3aa549-f417-45f2-bd1c-160181c342c3",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137",
+      "name": "Authenticated"
+    },
+    "pattern": "/rest/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "c1590a62-8ece-4bca-89b0-6f1b3362b3cc",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/views/public/chat.view.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "fb3b6a35-1c30-4573-8747-58bf3c8d5906",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/mobileapp",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  }
+]
