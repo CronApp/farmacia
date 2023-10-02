@@ -4,14 +4,14 @@
   background-color: transparent;
   letter-spacing: 0px;
   height: 45px;
-  top: 50px;
+  top: 4px;
   border: 1px solid rgb(95, 170, 202);
 }
 
 #crn-textinput-343947 { 
   background-color: transparent;
   border-radius: 20px;
-  top: 75px;
+  top: 11px;
   height: 45px;
   border: 1px solid rgb(95, 170, 202);
 }
@@ -25,6 +25,11 @@ div#crn-textinput-343947 input.form-control {
   border-bottom: 0px;
   color: rgb(128, 128, 128);
 }
+
+#crn-button-838011 { 
+  width: 200px;
+  text-align-last: center;
+}
 </style><div class="bg">
 <div class="container-full" data-container="true">
     <div class="container-fluid" data-container="true" style="background-color: rgb(255, 255, 255); background-image: url(&quot;public/assets/tela login.png&quot;);" crn-skin="css/skins/farmacia.css">
@@ -32,8 +37,8 @@ div#crn-textinput-343947 input.form-control {
             <div class="col-xs-12 col-sm-3 col-lg-4" data-container="true"></div>
             <div class="col-xs-12 col-sm-6 col-lg-4 login-panel login-view" data-container="true" style="margin-top: 0px; box-shadow: none; background-color: transparent;">
                 <form class="form-validation" autocomplete="off" name="form" ng-submit="login()" role="form">
-                    <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz">
-                    <div class="text-danger wrapper text-center" ng-show="authError"></div>
+                    <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz" class="col-md-12">
+                    <div class="text-danger wrapper text-center col-md-12" ng-show="authError"></div>
                     <div class="component-holder ng-binding ng-scope col-xs-12 col-md-12" data-component="crn-image" id="crn-image-823921">
                         <h1>
                             <img alt="Login" src="img/logo-pharma-manager.png" class="" style="display:block; width:60%; height:auto; margin-left:auto; margin-right:auto;" xattr-position="margin-left:auto; margin-right:auto;" data-component="crn-image">
@@ -64,14 +69,22 @@ div#crn-textinput-343947 input.form-control {
                     </div>
                     <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-button">
                         <div class="messages col-md-12">
-                            <div ng-show="message.error" class="help-block" data-container="true">
+                            <div ng-show="message.error" class="help-block" data-container="true" style="">
                                 {{message.error}}
                             </div>
                         </div>
-                        <button role="button" aria-label="{{'Login.view.Login' | translate}}" class="btn btn-default col-xs-12 k-button btn-primary col-md-6 btn-block" type="submit" ng-disabled="form.$invalid || vm.dataLoading" ng-click="" xattr-size="" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled="" data-component="crn-button" crn-skin="" style="background-color: rgb(95, 170, 202); border: 0px solid; border-radius: 20px; box-shadow: none; position: relative; top: 108px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">
+                        
+                    </div><button role="button" aria-label="{{'Login.view.Login' | translate}}" class="btn btn-default col-xs-12 k-button btn-primary col-md-12 btn-block" type="submit" ng-disabled="form.$invalid || vm.dataLoading" ng-click="" xattr-size="" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled="" data-component="crn-button" crn-skin="" style="border: 0px;
+  border-radius: 30px;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  top: 20px;
+  position: relative;
+  text-align:center;" ng-show="true">
                             <span>{{"Login.view.Login" | translate}} </span>
                         </button>
-                    </div>
                 </form>
             </div>
             <div class="component-holder ng-binding ng-scope col-xs-12 col-sm-12 col-lg-12" data-component="crn-button" id="crn-button-846239"></div>
