@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cronapp-framework-spring</artifactId>
         <groupId>io.cronapp</groupId>
-        <version>2.9.1-SP.13</version>
+        <version>3.0.0-RC.7</version>
         <relativePath></relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,7 +16,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/test/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -25,7 +25,7 @@
                 </excludes>
             </resource>
             <resource>
-                <directory>src/test/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -156,22 +156,19 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-apm</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>boleto</artifactId>
-            <version>2.9.1</version>
+            <version>3.0.0-RC.7</version>
         </dependency>
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-watson-conversation</artifactId>
-            <version>4.2.1.4</version>
         </dependency>
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-workflow</artifactId>
-            <version>2.9.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -193,7 +190,6 @@
         <project.cronospass.resource mimetype="folder/src">src/main/resources</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/web">src/main/webapp</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/regular">src/test</project.cronospass.resource>
-        <project.cronospass.resource mimetype="folder/regular">src/test/java</project.cronospass.resource>
         <project.cronospass.resource mimetype="folder/src">src/test/java</project.cronospass.resource>
     </properties>
 </project>
