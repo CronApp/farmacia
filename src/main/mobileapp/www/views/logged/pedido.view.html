@@ -36,7 +36,7 @@
         </form> 
       </div> 
       <ion-list>
-      <ion-item class="item component-holder col-xs-12" id="crn-item-swipe-398676" data-component="crn-item-swipe" crn-repeat="vars.listaItensPedido">
+      <ion-item class="item component-holder col-xs-12" id="crn-item-swipe-398676" data-component="crn-item-swipe" ng-repeat="rowData in vars.listaItensPedido">
         <h2 style="display: inline">{{rowData.quantidade}} x {{rowData.produto.nome}} - {{rowData.produto.precoVenda * rowData.quantidade |mask:"#.##0,00;0"}}</h2>
         <div id="crn-item-options9924" class="component-holder" data-component="crn-item-options">
           <div class="crn-item-options" data-item="true">
