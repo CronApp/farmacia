@@ -5,7 +5,6 @@ import cronapi.rest.security.CronappSecurity;
 import java.util.concurrent.Callable;
 
 
-
 @CronapiMetaData(type = "blockly")
 @CronappSecurity(post = "Public", get = "Public", execute = "Public", delete = "Public", put = "Public")
 public class Boleto {
@@ -14,29 +13,29 @@ public static final int TIMEOUT = 300;
 
 /**
  *
+ * Descreva esta função...
+ *
  * @param vendaId
- * @return Var
+ *
+ * @author Fernando Santos
+ * @since 21/09/2023, 10:28:29
+ *
  */
-// Descreva esta função...
-public static Var consultarDadosVenda(Var vendaId) throws Exception {
+public static Var consultarDadosVenda(@ParamMetaData(description = "vendaId", id = "484fe18a") Var vendaId) throws Exception {
  return new Callable<Var>() {
 
    private Var mapa = Var.VAR_NULL;
    private Var result = Var.VAR_NULL;
 
    public Var call() throws Exception {
-
     mapa =
     cronapi.map.Operations.createObjectMap();
-
     result =
     cronapi.database.Operations.query(Var.valueOf("farmacia.entity.ClienteVenda"),Var.valueOf("select c.cliente, c.venda from ClienteVenda c where c.venda.id = :vendaId"),Var.valueOf("vendaId",vendaId));
-
     cronapi.map.Operations.setMapField(mapa,
     Var.valueOf("cliente"),
     cronapi.database.Operations.getField(result,
     Var.valueOf("this[0]")));
-
     cronapi.map.Operations.setMapField(mapa,
     Var.valueOf("venda"),
     cronapi.database.Operations.getField(result,
@@ -48,10 +47,15 @@ public static Var consultarDadosVenda(Var vendaId) throws Exception {
 
 /**
  *
+ * Descreva esta função...
+ *
  * @param vendaId
+ *
+ * @author Fernando Santos
+ * @since 21/09/2023, 10:28:29
+ *
  */
-// Descreva esta função...
-public static void emitir(Var vendaId) throws Exception {
+public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1") Var vendaId) throws Exception {
   new Callable<Var>() {
 
    private Var retorno = Var.VAR_NULL;
@@ -63,40 +67,30 @@ public static void emitir(Var vendaId) throws Exception {
    private Var erro = Var.VAR_NULL;
 
    public Var call() throws Exception {
-
     try {
-
-        dataAtual =
+         dataAtual =
         cronapi.dateTime.Operations.getNowNoHour();
-
         mapa =
         Var.valueOf(consultarDadosVenda(vendaId));
-
         cliente =
         cronapi.map.Operations.getMapField(mapa,
         Var.valueOf("cliente"));
-
         venda =
         cronapi.map.Operations.getMapField(mapa,
         Var.valueOf("venda"));
-
         retorno =
         Var.valueOf(validar(
         cronapi.object.Operations.getObjectField(venda,
         Var.valueOf("statusVenda"))));
-
         if (
         Var.valueOf(!retorno.equals(
         Var.VAR_NULL)).getObjectAsBoolean()) {
-
             cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"), retorno);
         } else {
-
             nomeArquivo =
             Var.valueOf(
-            Var.valueOf("boleto_").toString() +
-            cronapi.dateTime.Operations.getNowInMilliseconds().toString());
-
+            Var.valueOf("boleto_").getObjectAsString() +
+            cronapi.dateTime.Operations.getNowInMilliseconds().getObjectAsString());
             cronapi.io.Operations.startDownload(
             paymentslip.PaymentSlip.generatePaymentSlipByteArray(
             paymentslip.PaymentSlip.createInstanceOfPaymentSlip(
@@ -130,11 +124,11 @@ public static void emitir(Var vendaId) throws Exception {
             Var.valueOf("1207113"),
             Var.valueOf("18"),
             paymentslip.PaymentSlip.createAddress(
-            Var.valueOf("Rua Prof. Leopoldo Amaral, n• 366"),
-            Var.valueOf("Pituba"),
-            Var.valueOf("41.830-494"),
-            Var.valueOf("Salvador"),
-            Var.valueOf("BA")),
+            Var.valueOf("Avenida Roque Petroni Jr, 999, 13º andar"),
+            Var.valueOf("Jardim das Acácias"),
+            Var.valueOf("CEP: 04707-910"),
+            Var.valueOf("São Paulo"),
+            Var.valueOf("SP")),
             Var.valueOf("9000206")),
             paymentslip.PaymentSlip.createPayer(
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
@@ -154,17 +148,15 @@ public static void emitir(Var vendaId) throws Exception {
             Var.valueOf("Somente no Cronapp Bank"))),
             Var.valueOf("PDF")),
             Var.valueOf(
-            nomeArquivo.toString() +
-            Var.valueOf(".pdf").toString()));
+            nomeArquivo.getObjectAsString() +
+            Var.valueOf(".pdf").getObjectAsString()));
         }
      } catch (Exception erro_exception) {
           erro = Var.valueOf(erro_exception);
-
-        cronapi.util.Operations.log(
+         cronapi.util.Operations.log(
         Var.valueOf("General"),
         Var.valueOf("SEVERE"),
         Var.valueOf("Erro ao tentar gerar o boleto"), Var.VAR_NULL);
-
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"),
         Var.valueOf("Erro ao tentar gerar o boleto"));
      }
@@ -175,25 +167,26 @@ public static void emitir(Var vendaId) throws Exception {
 
 /**
  *
- * @param status
- * @return Var
+ * Descreva esta função...
+ *
+ * @param status<farmacia.entity.StatusVenda>
+ *
+ * @author Fernando Santos
+ * @since 21/09/2023, 10:28:29
+ *
  */
-// Descreva esta função...
-public static Var validar(Var status) throws Exception {
+public static Var validar(@ParamMetaData(description = "status", id = "989276a4") Var status) throws Exception {
  return new Callable<Var>() {
 
    private Var retorno = Var.VAR_NULL;
 
    public Var call() throws Exception {
-
     retorno =
     Var.VAR_NULL;
-
     if (
     Var.valueOf(!
     cronapi.object.Operations.getObjectField(status, Var.valueOf("id")).equals(
     Var.valueOf(2))).getObjectAsBoolean()) {
-
         retorno =
         cronapi.object.Operations.getObjectField(status, Var.valueOf("descricao"));
     }

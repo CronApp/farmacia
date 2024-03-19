@@ -1,4 +1,12 @@
-<div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params="" primary-datasource="User">
+<style title="local">
+#btn_crud_cancel41107 { 
+  left: 0px;
+}
+
+#btn_crud_post41107 { 
+  left: 0px;
+}
+</style><div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params="" primary-datasource="User">
     <h1 class="component-holder text-left h3 title" xattr-position="text-left" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-59641">{{"User" | translate}}</h1>
     <datasource data-component="crn-datasource" filter="" name="User" entity="app.userManager" keys="id" rows-per-page="100" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;accessFailedCount&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;emailConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;lockoutEnd&quot;,&quot;type&quot;:&quot;DateTime&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedEmail&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;normalizedUserName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;password&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumber&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;phoneNumberConfirmed&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;securityStamp&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;twoFactorEnabled&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;userName&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;theme&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;picture&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]" condition="" lazy="true" parameters="" dependent-lazy-post="" checkrequired=""></datasource>
     <div role="search" ng-hide="User.inserting || User.editing" data-component="crn-textinput" id="crn-datasource-filter-general59641" class="">
@@ -14,16 +22,10 @@
     <div data-component="crn-form" id="crn-form-form-User-59641">
         <section class="form" ng-show="User.editing || User.inserting">
             <form crn-datasource="User" class="">
-                <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz" />
-                <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
-                    <button aria-label="{{'StartInserting' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startInserting()"><span class="k-icon k-i-plus"></span></button>
-                    <button aria-label="{{'StartEditing' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startEditing()"><span class="k-icon k-i-edit"></span></button>
-                    <button aria-label="{{'Before' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><span class="k-icon k-i-arrow-chevron-left"></span></button>
-                    <button aria-label="{{'Next' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><span class="k-icon k-i-arrow-chevron-right"></span></button>
-                    <button aria-label="{{'Remove' | translate}}" class="btn btn-danger btn-fab k-button" data-component="crn-button" ng-click="datasource.remove()"><span class="k-icon k-i-close"></span></button>
-                </div>
-                <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
-                    <button aria-label="{{'SaveChanges' | translate}}" class="btn btn-success btn-fab k-button" id="btn_crud_post41107" data-component="crn-button" ng-click="datasource.post()"><span class="k-icon k-i-check"></span></button>
+                <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz">
+                
+                <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting" style="float: right; text-align: right;">
+                    <button aria-label="{{'SaveChanges' | translate}}" class="btn btn-success btn-fab k-button" id="btn_crud_post41107" data-component="crn-button" ng-click="datasource.post()" crn-skin="" style="background-color: rgb(95, 170, 202);"><span class="k-icon k-i-check"></span></button>
                     <button aria-label="{{'CancelChanges' | translate}}" class="btn btn-danger btn-fab k-button" id="btn_crud_cancel41107" data-component="crn-button" ng-click="datasource.cancel()"><span class="k-icon k-i-cancel"></span></button>
                 </div>
                 <br>

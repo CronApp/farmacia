@@ -1,21 +1,44 @@
 <style title="local">
 #crn-horizontal-container-599925 { 
   margin-top: 50px;
+  border: 1px solid rgb(67, 67, 67);
 }
 
 #crn-button-898512 { 
   margin-top: 20px;
+  box-shadow: none;
 }
 
 #crn-button-307772 { 
   margin-top: 20px;
 }
+
+div#crn-button-898512 button { 
+  background-color: rgb(95, 170, 202);
+  border-radius: 5px;
+  width: 42px;
+  box-shadow: none;
+}
+
+div#crn-button-136828 button { 
+  background-color: rgb(95, 170, 202);
+}
+
+div#crn-button-307772 button { 
+  background-color: rgb(95, 170, 202);
+  border-radius: 10px;
+  box-shadow: none;
+}
 </style> 
 <div id="starter" ng-init="cronapi.client('js.blockly.Pedido.criarLista').run()" ng-destroy="" data-component="crn-start" screen-params="" primary-datasource="Pedido"> 
   <datasource data-component="crn-datasource" class="component-holder" name="Produto" entity="farmacia.Produto" keys="_objectKey" rows-per-page="100" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;codigo&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoCusto&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoVenda&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;fornecedor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;foto&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;fornecedor_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]" parameters="" dependent-lazy-post="" lazy="true" checkrequired="true" condition=""></datasource> 
-  <h1 class="component-holder h3 title text-center col-md-12" xattr-position="text-center" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-4304">{{'Pedido' | translate}}</h1> 
+  <h1 class="component-holder h3 title col-md-12 text-left" xattr-position="text-left" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-4304" style="color: rgb(64, 144, 178); font-weight: bold;">{{'Pedido' | translate}}</h1><div data-component="crn-icon" class="component-holder  col-md-1" id="crn-icon-409367" ng-click="cronapi.callFunction('cronapi.screen.showModal').call('modal22243')" style="text-align: right;
+  cursor: pointer;
+  float: right;
+  width: 20px;">
+          <i class="fa fa-question-circle" style="color: rgb(95, 170, 202);"></i></div> 
   <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-vertical-container" id="crn-vertical-container-493105"> 
-    <div class="col-md-12" data-container="true" data-replace="true"> 
+    <div class="col-md-12" data-container="true" data-replace="true" crn-skin="css/skins/farmacia.css"> 
       <datasource data-component="crn-datasource" class="component-holder" name="Cliente" entity="farmacia.Cliente" keys="_objectKey" rows-per-page="100" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cpf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cep&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;endereco&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;complemento&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;bairro&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cidade&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;uf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" parameters="" dependent-lazy-post="" lazy="true" condition="" checkrequired=""></datasource> 
       <div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-enterprise-dynamic-combobox"> 
         <div class="form-group"> 
@@ -24,9 +47,7 @@
         </div> 
       </div> 
       <a href="https://docs.cronapp.io/pages/viewpage.action?pageId=176656328" class="cron-link component-holder col-md-12" target="_blank" data-replace="false" data-component="crn-anchor" id="crn-anchor-899258"> 
-        <div data-component="crn-icon" class="col-md-12 help" id="crn-icon-162325"> 
-          <i class="fa fa-question-circle"></i> 
-        </div></a> 
+        </a> 
       <div class="component-holder ng-binding ng-scope  col-md-3" data-component="crn-enterprise-dynamic-combobox"> 
         <div class="form-group"> 
           <label for="cron-crn-enterprise-dynamic-combobox-913740">{{'Produto' | translate}}</label> 
@@ -39,8 +60,8 @@
           <input type="text" mask="99;0" mask-placeholder="" ng-required="" ng-model="vars.quantidade" class="form-control k-textbox" id="input9763" placeholder="Quantidade"> 
         </div> 
       </div> 
-      <div class="component-holder ng-binding ng-scope  col-md-2" data-component="crn-button" id="crn-button-898512"> 
-        <button class="btn btn-default k-button" ng-click="cronapi.client('js.blockly.Pedido.inserir').run(Produto.active, vars.quantidade)" xattr-fullsize="" xattr-theme="btn-default" xattr-disabled=""><i class="glyphicon glyphicon-plus"></i> <span></span></button> 
+      <div class="component-holder ng-binding ng-scope  col-md-2" data-component="crn-button" id="crn-button-898512" style=""> 
+        <button class="btn btn-default k-button" ng-click="cronapi.client('js.blockly.Pedido.inserir').run(Produto.active, vars.quantidade)" xattr-fullsize="" xattr-theme="btn-default" xattr-disabled=""><i class="glyphicon glyphicon-plus text-color-default" icon-theme="text-color-default"></i> <span></span></button> 
       </div> 
     </div> 
     <div class="col-md-12" data-container="true" data-replace="false"> 
@@ -49,31 +70,31 @@
           <table class=""> 
             <thead> 
               <tr class="table-header k-grid-header"> 
-                <th class="k-header active" data-container="true" rowspan="" colspan="" data-component="crn-head-cell"> 
+                <th class="k-header" data-container="true" rowspan="" colspan="" data-component="crn-head-cell" style="background-color: rgb(95, 170, 202); border: 0px none;"> 
                   <div data-container="true" data-replace="true">{{'Produto' | translate}}</div></th> 
-                <th class="k-header" data-container="true" rowspan="" colspan="" data-component="crn-head-cell"> 
+                <th class="k-header" data-container="true" rowspan="" colspan="" data-component="crn-head-cell" style="background-color: rgb(95, 170, 202); border: 0px none;"> 
                   <div data-container="true" data-replace="true">{{'Quantidade' | translate}}</div></th> 
-                <th class="k-header" data-container="true" rowspan="" colspan="" data-component="crn-head-cell"> 
+                <th class="k-header" data-container="true" rowspan="" colspan="" data-component="crn-head-cell" style="background-color: rgb(95, 170, 202); border: 0px none;"> 
                   <div data-container="true" data-replace="true">{{'Valor' | translate}}</div></th> 
-                <th class="k-header" data-container="true" rowspan="" colspan=""> 
+                <th class="k-header active" data-container="true" rowspan="" colspan="" style="background-color: rgb(95, 170, 202); border: 0px none;"> 
                   <div data-container="true" data-replace="true"></div></th> 
               </tr> 
             </thead> 
             <tbody> 
               <tr class="table-content" data-container="true" ng-repeat="rowData in vars.listaItensPedido"> 
-                <td class="active" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
-                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true">
+                <td class="" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
+                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true" style="border: 1px none rgb(67, 67, 67);">
                      {{rowData.produto.nome}} 
                   </div></td> 
                 <td class="" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
-                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true">
+                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true" style="border: 1px none rgb(67, 67, 67);">
                      {{rowData.quantidade}} 
                   </div></td> 
                 <td class="" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
-                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true">
+                  <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="true" style="border: 1px none rgb(67, 67, 67);">
                      {{rowData.produto.precoVenda|mask:"#.##0,00;0"}} 
                   </div></td> 
-                <td class="" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
+                <td class="active" data-container="true" data-component="crn-cell" rowspan="" colspan=""> 
                   <div class="" data-component="crn-horizontal-container" data-container="true" data-replace="false"> 
                     <div class="component-holder ng-binding ng-scope" data-component="crn-button" id="crn-button-136828"> 
                       <button class="btn btn-default k-button" ng-click="cronapi.client('js.blockly.Pedido.excluir').run($index + 1)" xattr-fullsize="" xattr-theme="btn-default" xattr-disabled=""><i class="glyphicon glyphicon-remove"></i> <span></span></button> 
@@ -84,7 +105,7 @@
           </table> 
         </div> 
       </div> 
-      <div class="ng-binding ng-scope col-md-12" data-component="crn-horizontal-container" id="crn-horizontal-container-599925"> 
+      <div class="ng-binding ng-scope col-md-12" data-component="crn-horizontal-container" id="crn-horizontal-container-599925" style="border: 0px solid;" crn-skin="css/skins/farmacia.css"> 
         <div class="col-md-6" data-container="true" data-replace="true"></div> 
         <div class="col-md-6" data-container="true" data-replace="false"> 
           <div class="component-holder ng-binding ng-scope col-sm-6 col-md-6" data-component="crn-textinput" id="crn-textinput-428748"> 
@@ -93,11 +114,32 @@
               <input type="number" mask="#.##0,00;0" mask-placeholder="" ng-required="false" ng-model="vars.valorTotal" class="form-control k-textbox" id="input4295" placeholder="{{'ValorTotal' | translate}}"> 
             </div> 
           </div> 
-          <div class="component-holder ng-binding ng-scope col-sm-6 col-md-6" data-component="crn-button" id="crn-button-307772"> 
+          <div class="component-holder ng-binding ng-scope col-sm-6 col-md-6" data-component="crn-button" id="crn-button-307772" style=""> 
             <button class="btn btn-default k-button" ng-click="cronapi.client('js.blockly.Pedido.finalizar').run()" xattr-fullsize="" xattr-theme="btn-default" xattr-disabled=""><i class=""></i> <span>Finalizar</span></button> 
           </div> 
         </div> 
       </div> 
     </div> 
   </div> 
+<div class="modal fade col-md-12" id="modal22243" style="">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="component-holder modal-header">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="false"><h1 class="text-center title h1" xattr-position="text-center" xattr-type="h1" data-component="crn-text-component" id="crn-text-component-1077009">Tabela</h1></div>
+       </div>
+      </div>
+      <div class="modal-body">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true">Tabela é um componente que permite a exibição de dados de forma organizada, muito parecida com a Grade. No entanto, ela é extremamente simples. Saiba mais consultando nossa documentação:</div><a href="https://docs.cronapp.io/display/CRON2/Tabela" class="cron-link color-default text-left col-md-12 col-lg-12 col-sm-12 col-xs-12" target="_blank" data-replace="true" link-theme="color-default" data-component="crn-anchor" id="crn-anchor-1010870">Tabela</a>
+       </div>
+     </div>
+     <div class="modal-footer">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="false"><div class="component-holder ng-scope" data-component="crn-button" id="crn-button-461157" crn-skin="css/skins/farmacia.css"><button class="btn k-button btn-block btn-default" ng-click="cronapi.callFunction('cronapi.screen.hideModal').call('modal22243')" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled=""><i class="" icon-theme=""></i> <span class="" text-theme="">Ok</span></button></div></div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
 </div>

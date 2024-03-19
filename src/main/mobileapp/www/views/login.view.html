@@ -1,32 +1,40 @@
-<ion-view role="region" aria-labelledby="login_page_title" cache-view="false" can-swipe-back="false" class="pane login-bg" data-container="true">
-    <h1 class="sr-only" id="login_page_title">{{"Users.view.Login" | translate}}</h1>
-    <ion-content class="scroll-content center-content-vertically" data-component="crn-ion-content">
-    <div class="list safe-top" data-container="true">
-      <div class="col text-center">
-        <img aria-roledescription="logo" alt="{{'Accessibility.Login.Logo.Alt' | translate}}" src="img/logo-pharma-manager.png" class="component-holder logo" style="display: block; margin-left:auto; margin-right:auto;" xattr-position="display: block; margin-left:auto; margin-right:auto;" data-component="crn-image" id="crn-image-960683">
-      </div>
+<style title="local">
+#crn-input-icon-42571 { 
+  border: 1px solid rgb(95, 170, 202);
+  border-radius: 20px;
+  color: rgb(67, 67, 67);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#crn-input-icon-21941 { 
+  border: 1px solid rgb(95, 170, 202);
+  border-radius: 20px;
+  color: rgb(67, 67, 67);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 10px;
+}
+</style>
+<ion-view class="pane" style=""> 
+  <ion-content data-component="crn-ion-content" class="scroll-content" style="background-image: url(&quot;assets/tela login.png&quot;); position: relative;"> 
+    <img alt="{{'Accessibility.Login.Logo.Alt' | translate}}" src="assets/logo-pharma-manager cor.png" class="center-block" style="object-fit: cover;
+  width: 200px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;" xattr-position="center-block" width="100%" height="" object-fit="object-fit: cover;" data-component="crn-image" id="crn-image-284883"><div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-970918">&nbsp;</div>
+    <div class="item item-input" data-component="crn-input-icon" id="crn-input-icon-42571" style="width: 300px; top: 0px;"> 
+      <input aria-label="Search" type="text" placeholder="Usuário" ng-model="vars.username" mask="" keyboard="" style="position: relative; left: 2px; top: 0px; background-color: transparent;" class="col-xs-6">
     </div>
-    <form class="form-validation" autocomplete="off" name="form" role="form">
-      <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz">
-      <div class="list list-inset login-mobile" data-container="true">
-                <div class="item item-input component-holder" data-component="crn-input-icon" for="crn-input-icon-228215" title="{{'Login.view.Username' | translate}}">
-          <input aria-label="{{'Login.view.Username' | translate}}" autocomplete="username" autocorrect="off" autocapitalize="off" type="text" placeholder="{{'Login.view.Username' | translate}}" ng-model="vars.username" id="crn-input-icon-228215">
-        </div>
-        <div class="item item-input component-holder" data-component="crn-input-icon" for="crn-input-icon37951" title="{{'Login.view.Password' | translate}}">
-          <input aria-label="{{'Login.view.Password' | translate}}" autocomplete="current-password" type="password" placeholder="{{'Login.view.Password' | translate}}" ng-model="vars.password" id="crn-input-icon37951">
-        </div>
-        <div class="item" title="{{'Login.view.Login' | translate}}" for="crn-button-445347">
-          <button role="button" aria-label="{{'Login.view.Login' | translate}}" class="button component-holder button-full button-positive" type="button" ng-click="cronapi.client('js.blockly.auth.Login.login').run(vars.username, vars.password, null)" data-component="crn-button" id="crn-button-445347" xattr-fullsize="button-full" xattr-theme="button-positive" ng-disabled="form.$invalid || vm.dataLoading">
-            <i class=""></i>
-            <span>{{"Login.view.Login" | translate}}</span>
-          </button>
-        </div>
-        <div class="item" title="{{message.error}}">
-          <div ng-show="message.error" class="help-block" data-container="true">
-            {{message.error}}
-          </div>
-        </div>
-      </div>
-    </form>
-  </ion-content>
+    <div class="item item-input" data-component="crn-input-icon" id="crn-input-icon-21941" style="width: 300px;"> 
+      <input aria-label="Search" type="text" placeholder="Senha" ng-model="vars.password" mask="" keyboard="" style="position: relative; left: 1px;" class="col-xs-7">
+    </div>
+    <button role="button" aria-label="{{'Login.view.Login' | translate}}" class="button component-holder button-positive button-medium button-full" type="button" ng-click="cronapi.client('js.blockly.auth.Login.login').names('0d5a70ab', '1b7d6238', '98e8711e').run(vars.username, vars.password, null)" data-component="crn-button" id="crn-button-24741" xattr-fullsize="button-full" xattr-theme="button-positive" ng-disabled="false" crn-skin="" style="background-color: rgb(95, 170, 202); color: rgb(255, 255, 255); border-radius: 20px; letter-spacing: 2px; font-weight: bold; object-fit: cover; text-align: center; display: block; margin-left: auto; margin-right: auto; top: 17px; width: 300px;" xattr-size=""> <i class=""></i> <span style="color: rgb(255, 255, 255); text-transform: uppercase;">{{"Login.view.Login" | translate}}</span> </button>
+  </ion-content> 
 </ion-view>

@@ -6,3 +6,20 @@ ion-content button {
 .margin-top { 
   margin-top: 20px !important;
 }
+
+.style8732 { 
+  background-color: rgb(95, 170, 202);
+  border: 20px solid;
+  color: rgb(67, 67, 67);
+}
+
+.ion-asterisk:before {
+    content: "";
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+    height: 64px;
+    background: #5faaca;
+}

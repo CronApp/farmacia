@@ -9,13 +9,13 @@ window.blockly.js.blockly.Pedido = window.blockly.js.blockly.Pedido || {};
  * Pedido
  *
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
 window.blockly.js.blockly.Pedido.finalizarArgs = [];
 window.blockly.js.blockly.Pedido.finalizar = async function() {
-
+ var codigo, item;
   //
   this.cronapi.util.callServerBlocklyAsynchronous('blockly.Pedido:salvarItens', async function(sender_resposta) {
       resposta = sender_resposta;
@@ -28,41 +28,41 @@ window.blockly.js.blockly.Pedido.finalizar = async function() {
 }
 
 /**
- * @function limparVariaveis
- *
- * Descreva esta função...
- *
- *
- * @author Root
- * @since 29/11/2023, 15:05:21
- *
- */
-window.blockly.js.blockly.Pedido.limparVariaveisArgs = [];
-window.blockly.js.blockly.Pedido.limparVariaveis = async function() {
-
-  //
-  this.cronapi.screen.changeValueOfField("vars.produto", null);
-  //
-  this.cronapi.screen.changeValueOfField("vars.quantidade", 0);
-}
-
-/**
  * @function criarLista
  *
  * Descreva esta função...
  *
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
 window.blockly.js.blockly.Pedido.criarListaArgs = [];
 window.blockly.js.blockly.Pedido.criarLista = async function() {
-
+ var codigo, item;
   //
   this.cronapi.screen.createScopeVariable('listaItensPedido', []);
   //
   this.cronapi.screen.createScopeVariable('valorTotal', 0);
+}
+
+/**
+ * @function limparVariaveis
+ *
+ * Descreva esta função...
+ *
+ *
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
+ *
+ */
+window.blockly.js.blockly.Pedido.limparVariaveisArgs = [];
+window.blockly.js.blockly.Pedido.limparVariaveis = async function() {
+ var codigo, item;
+  //
+  this.cronapi.screen.changeValueOfField("vars.produto", null);
+  //
+  this.cronapi.screen.changeValueOfField("vars.quantidade", null);
 }
 
 /**
@@ -72,13 +72,13 @@ window.blockly.js.blockly.Pedido.criarLista = async function() {
  *
  * @param index
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
-window.blockly.js.blockly.Pedido.excluirArgs = [{ description: 'index', id: '75a75b87' }];
+window.blockly.js.blockly.Pedido.excluirArgs = [{ description: 'index', id: '7e18cdf1' }];
 window.blockly.js.blockly.Pedido.excluir = async function(index) {
-
+ var codigo;
   //
   this.cronapi.screen.getScopeVariable('listaItensPedido').splice((index - 1), 1);
   //
@@ -93,11 +93,11 @@ window.blockly.js.blockly.Pedido.excluir = async function(index) {
  * @param produto
  * @param quantidade
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
-window.blockly.js.blockly.Pedido.inserirArgs = [{ description: 'produto', id: 'abf72696' }, { description: 'quantidade', id: 'fbb6d20a' }];
+window.blockly.js.blockly.Pedido.inserirArgs = [{ description: 'produto', id: 'a45db1d1' }, { description: 'quantidade', id: '2fdcf9d7' }];
 window.blockly.js.blockly.Pedido.inserir = async function(produto, quantidade) {
 
   //
@@ -129,13 +129,13 @@ window.blockly.js.blockly.Pedido.inserir = async function(produto, quantidade) {
  * Descreva esta função...
  *
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
 window.blockly.js.blockly.Pedido.calcularTotalArgs = [];
 window.blockly.js.blockly.Pedido.calcularTotal = async function() {
-
+ var codigo, item;
   //
   this.cronapi.screen.changeValueOfField("vars.valorTotal", 0);
   //
@@ -155,15 +155,15 @@ window.blockly.js.blockly.Pedido.calcularTotal = async function() {
  * Descreva esta função...
  *
  *
- * @author Root
- * @since 29/11/2023, 15:05:21
+ * @author Igor Andrade
+ * @since 27/09/2023, 16:57:45
  *
  */
 window.blockly.js.blockly.Pedido.lerCodigoBarrasArgs = [];
 window.blockly.js.blockly.Pedido.lerCodigoBarras = async function() {
-
+ var codigo, item;
   //
-  this.cronapi.cordova.camera.qrCodeScanner('CODE_39', 'Consultar o preço do produto', async function(sender_codigo) {
+  this.cronapi.cordova.camera.qrCodeScanner('QR_CODE', 'Consultar o preço do produto', async function(sender_codigo) {
       codigo = sender_codigo;
     //
     this.cronapi.util.callServerBlocklyAsynchronous('blockly.Produto:consultar', async function(sender_item) {
@@ -174,7 +174,7 @@ window.blockly.js.blockly.Pedido.lerCodigoBarras = async function() {
         this.cronapi.screen.notify('error',this.cronapi.object.getProperty(item, 'msg'));
       } else {
         //
-        this.cronapi.screen.notify('info',[this.cronapi.object.getProperty(item, 'nome'),' - ',this.cronapi.object.getProperty(item, 'precoCusto')].join(''));
+        this.cronapi.screen.changeValueOfField("vars.produto", this.cronapi.object.getObjectField(item, 'id'));
       }
     }.bind(this), codigo);
   }.bind(this), async function(sender_item) {
