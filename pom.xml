@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cronapp-framework-spring</artifactId>
         <groupId>io.cronapp</groupId>
-        <version>3.0.0-RC.7</version>
+        <version>3.0.0-SP.13</version>
         <relativePath></relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -34,7 +34,7 @@
                 </excludes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/test/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -160,7 +160,7 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>boleto</artifactId>
-            <version>3.0.0-RC.7</version>
+            <version>3.0.0-SP.13</version>
         </dependency>
         <dependency>
             <groupId>io.cronapp</groupId>
@@ -183,7 +183,6 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-qrcode-plugin</artifactId>
-            <version>1.0.3</version>
         </dependency>
     </dependencies>
     <properties>
