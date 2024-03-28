@@ -1,5 +1,5 @@
 <ion-view cache-view="false" hide-back-button="true" role="region" class="pane">
-    <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar">
+    <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar" crn-skin="">
         <div side="left" class="buttons buttons-left header-item">
             <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Produto.inserting &amp;&amp; !Produto.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear">
                 <i class="icon ion-navicon"></i>
@@ -81,7 +81,7 @@
                 </select>
             </label>
             <!-- foto begin -->
-              <div class="item item-input item-stacked-label component-holder" data-component="crn-dynamic-image" id="crn-dynamic-image-foto">
+              <div class="item item-input item-stacked-label component-holder" data-component="crn-dynamic-image" id="crn-dynamic-image-foto" crn-skin="css/skins/farmacia.css">
                   <label class="input-label">{{'Foto' | translate}}</label>
                   <div class="form-group">
                       <div alt="Foto" dynamic-image="" ng-model="Produto.active.foto" max-file-size="5MB" class="dynamic-image-container" ng-required="false">

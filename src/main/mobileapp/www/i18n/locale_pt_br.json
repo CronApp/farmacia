@@ -162,5 +162,12 @@
   "Vendas": "Vendas",
   "Adicionar": "Adicionar",
   "Anotacoes": "Anotações",
-  "Chat": "Conversa"
+  "Chat": "Conversa",
+  "Anotacao": "Anotação",
+  "Notas": "Notas",
+  "Home": "",
+  "UserActivePicture": "",
+  "User.active.picture": "Foto",
+  "Admin.server.out": "Erro ao contactar o servidor",
+  "LoginBlockly": ""
 }

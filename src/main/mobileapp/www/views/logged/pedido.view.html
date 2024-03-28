@@ -1,4 +1,7 @@
-<div id="starter" ng-init="cronapi.client('js.blockly.Pedido.criarLista').run()" ng-destroy="" data-component="crn-start" screen-params=""> 
+<style title="local">
+#crn-option-button9924-2 { 
+}
+</style><div id="starter" ng-init="cronapi.client('js.blockly.Pedido.criarLista').run()" ng-destroy="" data-component="crn-start" screen-params=""> 
   <ion-view cache-view="false" hide-back-button="true" role="region" class="pane"> 
     <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
       <div side="left" class="buttons buttons-left header-item"> 
@@ -25,10 +28,10 @@
               <span class="input-label">{{'Cliente' | translate}}</span> 
               <select aria-label="Seleção Dinâmica" ng-model="vars.cliente" crn-datasource="Cliente" id="dynamic-select-7124" name="dynamic-select-7124" xkey-field="id" xdisplay-field="nome"><option value="">None</option></select> 
             </div> 
-            <label for="textinput-produto" class="item item-input item-select component-holder  col-xs-9" data-component="crn-dynamic-select" id="crn-dynamic-select-produto"> <span class="input-label">{{'Produto' | translate}}</span> <select aria-label="Produto" crn-datasource="Produto" ng-model="vars.produto" class="form-control" id="dynamic-produto" name="dynamic-produto" xkey-field="_objectKey" xdisplay-field="nome" required> <option value="">None</option> </select> </label>
-            <button class="button button-positive component-holder col-xs-3 button-clear button-large" type="submit" xattr-fullsize="" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.Pedido.lerCodigoBarras').run()" data-component="crn-button" id="crn-button-378867" xattr-size="button-large" xattr-type="button-clear"><i class="icon ion-ios-barcode-outline"></i> <span></span></button> 
-            <label for="textinput-quantidade-27341" class="item item-input item-stacked-label col-xs-12" data-component="crn-input-floating"> <span class="input-label">{{'Quantidade' | translate}}</span> <input aria-label="Quantidade" type="integer" placeholder="Quantidade" ng-model="vars.quantidade" id="textinput-quantidade-27341" name="textinput-quantidade" mask="" required> </label> 
-            <button class="button button-block button-positive component-holder button-small  col-xs-12" type="submit" xattr-fullsize="button-block" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.Pedido.inserir').run(Produto.active, vars.quantidade)" data-component="crn-button" id="crn-button-419729" xattr-size="button-small"><i class=""></i> <span>{{'Adicionar' | translate}}</span></button> 
+            <label for="textinput-produto" class="item item-input item-select component-holder  col-xs-9" data-component="crn-dynamic-select" id="crn-dynamic-select-produto"> <span class="input-label">{{'Produto' | translate}}</span> <select aria-label="Produto" crn-datasource="Produto" ng-model="vars.produto" class="form-control" id="dynamic-produto" name="dynamic-produto" xkey-field="_objectKey" xdisplay-field="nome" required=""> <option value="">None</option> </select> </label>
+            <button class="button component-holder col-xs-3 button-dark button-large button-clear" type="submit" xattr-fullsize="" xattr-theme="button-dark" ng-click="cronapi.client('js.blockly.Pedido.lerCodigoBarras').run()" data-component="crn-button" id="crn-button-378867" xattr-size="button-large" xattr-type="button-clear" style="background-color: rgb(95, 170, 202);"><i class="icon ion-ios-barcode-outline stable" xattr-icon-theme="stable" style="color: rgb(255, 255, 255);"></i> <span></span></button> 
+            <label for="textinput-quantidade-27341" class="item item-input item-stacked-label col-xs-12" data-component="crn-input-floating"> <span class="input-label">{{'Quantidade' | translate}}</span> <input aria-label="Quantidade" type="integer" placeholder="Quantidade" ng-model="vars.quantidade" id="textinput-quantidade-27341" name="textinput-quantidade" mask="" required=""> </label> 
+            <button class="button button-block button-positive component-holder button-small  col-xs-12" type="submit" xattr-fullsize="button-block" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.Pedido.inserir').run(Produto.active, vars.quantidade)" data-component="crn-button" id="crn-button-419729" xattr-size="button-small" crn-skin="css/skins/farmacia.css"><i class=""></i> <span>{{'Adicionar' | translate}}</span></button> 
             <!-- venda begin --> 
             <!-- NtoN  --> 
             <!-- NtoN  end--> 
@@ -36,11 +39,11 @@
         </form> 
       </div> 
       <ion-list>
-      <ion-item class="item component-holder col-xs-12" id="crn-item-swipe-398676" data-component="crn-item-swipe" crn-repeat="vars.listaItensPedido">
+      <div style="height: 20px;" data-component="crn-spacer" id="crn-spacer-702198" class="col-xs-12">&nbsp;</div><ion-item class="item component-holder col-xs-12" id="crn-item-swipe-398676" data-component="crn-item-swipe" crn-repeat="vars.listaItensPedido" style="">
         <h2 style="display: inline">{{rowData.quantidade}} x {{rowData.produto.nome}} - {{rowData.produto.precoVenda * rowData.quantidade |mask:"#.##0,00;0"}}</h2>
         <div id="crn-item-options9924" class="component-holder" data-component="crn-item-options">
           <div class="crn-item-options" data-item="true">
-            <ion-option-button id="crn-option-button9924-2" data-component="crn-button" class="button-assertive button" ng-click="cronapi.client('js.blockly.Pedido.excluir').run($index + 1)">
+            <ion-option-button id="crn-option-button9924-2" data-component="crn-button" class="button-assertive button" ng-click="cronapi.client('js.blockly.Pedido.excluir').run($index + 1)" style="">
               <i class="ion ion-trash-a"></i>
               <span>Delete</span>
             </ion-option-button>

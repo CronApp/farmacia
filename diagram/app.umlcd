@@ -1,13 +1,54 @@
 {
   "cells": [
     {
+      "allowConfiguration": false,
       "angle": 0,
       "apiPath": "src/main/webapp/raml/app/api.raml",
-      "attrs": {},
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-attrs-text": {
+          "fill": "#666",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-attrs-value": {
+          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-methods-text": {
+          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "stroke": "#C2C2C2",
+          "stroke-width": 1
+        },
+        ".uml-class-name-text": {
+          "fill": "#000",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 12,
+          "font-weight": "bold"
+        }
+      },
       "chkApi": false,
       "dataSource": "jdbc/main",
       "disableCache": true,
       "id": "paperCell",
+      "methods": [],
       "namespace": "app",
       "position": {
         "x": 0,
@@ -26,6 +67,7 @@
         "height": 0,
         "width": 0
       },
+      "sqlDebugging": false,
       "type": "basic.Rect",
       "visionLikePackage": false,
       "z": 1
@@ -40,35 +82,44 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "height": 110,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 100,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\nnome\ndata\nuser\n"
+          "text": "* id\nnome\ndata\nuser\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 63.40625,
-          "text": "Texto\nTexto\nData e Hora com Fuso\nUser\n"
+          "ref-x": 90,
+          "text": "Texto\nTexto\nCarimbo de Data e Hora\nUser\n"
         },
         ".uml-class-methods-rect": {
-          "height": 30,
-          "transform": "translate(0,160)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,140)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "text": "Anotacao"
         },
         "rect": {
@@ -190,17 +241,17 @@
       "modelType": "Table",
       "name": "Anotacao",
       "position": {
-        "x": 94,
-        "y": 642
+        "x": 62,
+        "y": 646
       },
       "queries": [],
       "realName": "",
       "restSecurity": null,
-      "role": "Auto",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "size": {
-        "height": 129.54235076904297,
-        "width": 192.953125
+        "height": 140,
+        "width": 231
       },
       "tableName": "",
       "tableScheme": null,
@@ -895,6 +946,284 @@
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
+        "builtIn:java.lang.Boolean",
+        "membershipEnabled:java.lang.Boolean",
+        "name:java.lang.String",
+        "normalizedName:java.lang.String"
+      ],
+      "attrs": {
+        ".uml-class-attrs-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 120,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
+        },
+        ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": "* id\nbuiltIn\nmembershipEnabled\nname\nnormalizedName\n"
+        },
+        ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "ref-x": 176,
+          "text": "Texto\nLógico\nLógico\nTexto\nTexto\n"
+        },
+        ".uml-class-methods-rect": {
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,160)"
+        },
+        ".uml-class-methods-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "font-size": 11,
+          "text": ""
+        },
+        ".uml-class-name-rect": {
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-name-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "text": "Grupos"
+        },
+        "rect": {
+          "stroke": "yellow",
+          "stroke-width": 2
+        }
+      },
+      "audit": false,
+      "dbFieldNames": [
+        "id",
+        "builtin",
+        "membership_enabled",
+        "name",
+        "normalized_name"
+      ],
+      "dbLengths": [
+        255,
+        "",
+        "",
+        255,
+        255
+      ],
+      "dbPrecisions": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "dbScales": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
+          "dbLength": 255,
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "{{\u0027Id\u0027 | translate}}",
+          "mask": "",
+          "isPrimaryKey": true,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "None",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false
+        },
+        {
+          "name": "builtIn",
+          "type": "java.lang.Boolean",
+          "dbName": "builtin",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "false",
+          "label": "{{\u0027Builtin\u0027 | translate}}",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false
+        },
+        {
+          "name": "membershipEnabled",
+          "type": "java.lang.Boolean",
+          "dbName": "membership_enabled",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "true",
+          "label": "{{\u0027MembershipEnabled\u0027 | translate}}",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false
+        },
+        {
+          "name": "name",
+          "type": "java.lang.String",
+          "dbName": "name",
+          "dbLength": 255,
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "{{\u0027Name\u0027 | translate}}",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false
+        },
+        {
+          "name": "normalizedName",
+          "type": "java.lang.String",
+          "dbName": "normalized_name",
+          "dbLength": 255,
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "\"\"",
+          "label": "{{\u0027NormalizedName\u0027 | translate}}",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false,
+          "sequence": "",
+          "isCascade": false,
+          "isVersion": false
+        }
+      ],
+      "id": "dcc00b32-aa33-47bd-bc4d-91da88f25cbc",
+      "isRest": "true",
+      "keyTypes": [
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "labels": [
+        "Id",
+        "Builtin",
+        "Membership Enabled",
+        "Name",
+        "Normalized Name"
+      ],
+      "methods": [],
+      "modelType": "Table",
+      "name": "Grupos",
+      "nullables": [
+        "id",
+        "builtin",
+        "membershipEnabled",
+        "name",
+        "normalizedName"
+      ],
+      "position": {
+        "x": 50,
+        "y": 65.68254089355469
+      },
+      "primaryKeys": [
+        "id"
+      ],
+      "queries": [],
+      "requireds": [],
+      "restSecurity": {
+        "delete": "Administrators",
+        "get": "Administrators",
+        "post": "Administrators",
+        "put": "Administrators"
+      },
+      "role": "Class",
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "sequences": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "size": {
+        "height": 150,
+        "width": 222
+      },
+      "swagger": false,
+      "tableName": "Grupos",
+      "type": "uml.Class",
+      "uniqueKeys": [],
+      "usePhysicalNames": false,
+      "z": 19
+    },
+    {
+      "angle": 0,
+      "attributes": [
+        "id:java.lang.String",
         "loginProvider:java.lang.String",
         "providerDisplayName:java.lang.String",
         "providerKey:java.lang.String",
@@ -1157,43 +1486,50 @@
       "angle": 0,
       "attributes": [
         "id:java.lang.String",
-        "builtIn:java.lang.Boolean",
-        "membershipEnabled:java.lang.Boolean",
-        "name:java.lang.String",
-        "normalizedName:java.lang.String"
+        "texto:java.lang.String",
+        "data:java.util.Date"
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "height": 130,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 80,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\nbuiltIn\nmembershipEnabled\nname\nnormalizedName\n"
+          "text": "* id\ntexto\ndata\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 136.78125,
-          "text": "Texto\nLógico\nLógico\nTexto\nTexto\n"
+          "ref-x": 156,
+          "text": "Texto\nTexto\nData\n"
         },
         ".uml-class-methods-rect": {
-          "height": 30,
-          "transform": "translate(0,180)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,120)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
-          "text": "Role"
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "text": "Notas"
         },
         "rect": {
           "stroke": "yellow",
@@ -1201,126 +1537,56 @@
         }
       },
       "audit": false,
-      "dbFieldNames": [
-        "id",
-        "builtin",
-        "membership_enabled",
-        "name",
-        "normalized_name"
-      ],
-      "dbLengths": [
-        255,
-        "",
-        "",
-        255,
-        255
-      ],
-      "dbPrecisions": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "dbScales": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
       "fields": [
         {
           "name": "id",
           "type": "java.lang.String",
           "dbName": "id",
-          "dbLength": 255,
+          "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
-          "label": "{{\u0027Id\u0027 | translate}}",
+          "label": "Id",
           "mask": "",
           "isPrimaryKey": true,
           "isUniqueKey": false,
           "isNullable": false,
-          "pkType": "None",
+          "pkType": "UUID",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
+          "passwordPolicy": "none",
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
           "isCascade": false,
-          "isVersion": false
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
         },
         {
-          "name": "builtIn",
-          "type": "java.lang.Boolean",
-          "dbName": "builtin",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "false",
-          "label": "{{\u0027Builtin\u0027 | translate}}",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": false,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false,
-          "sequence": "",
-          "isCascade": false,
-          "isVersion": false
-        },
-        {
-          "name": "membershipEnabled",
-          "type": "java.lang.Boolean",
-          "dbName": "membership_enabled",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "true",
-          "label": "{{\u0027MembershipEnabled\u0027 | translate}}",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": false,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false,
-          "sequence": "",
-          "isCascade": false,
-          "isVersion": false
-        },
-        {
-          "name": "name",
+          "name": "texto",
           "type": "java.lang.String",
-          "dbName": "name",
-          "dbLength": 255,
+          "dbName": "texto",
+          "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "{{\u0027Name\u0027 | translate}}",
+          "label": "Texto",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": false,
+          "isNullable": true,
           "pkType": "",
           "multitenantContext": "",
           "jsonIgnore": false,
@@ -1328,21 +1594,31 @@
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
+          "passwordPolicy": "none",
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
           "isCascade": false,
-          "isVersion": false
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
         },
         {
-          "name": "normalizedName",
-          "type": "java.lang.String",
-          "dbName": "normalized_name",
-          "dbLength": 255,
+          "name": "data",
+          "type": "java.util.Date",
+          "dbName": "data",
+          "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
-          "dbDefaultValue": "\"\"",
-          "label": "{{\u0027NormalizedName\u0027 | translate}}",
+          "dbDefaultValue": "Calendar.getInstance().getTime()",
+          "label": "Data",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -1354,71 +1630,48 @@
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
+          "passwordPolicy": "none",
           "referencedColumnName": "",
           "isSearchable": false,
           "sequence": "",
           "isCascade": false,
-          "isVersion": false
+          "isVersion": false,
+          "storageId": "",
+          "storageKey": "",
+          "storageType": "",
+          "storageSecret": "",
+          "foreignKeyName": "",
+          "joins": "",
+          "isIndex": false,
+          "useOuterJoin": false,
+          "regionAWS": ""
         }
       ],
-      "id": "dcc00b32-aa33-47bd-bc4d-91da88f25cbc",
+      "generateView": "Auto",
+      "id": "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
       "isRest": "true",
-      "keyTypes": [
-        "None",
-        "None",
-        "None",
-        "None",
-        "None"
-      ],
-      "labels": [
-        "Id",
-        "Builtin",
-        "Membership Enabled",
-        "Name",
-        "Normalized Name"
-      ],
       "methods": [],
       "modelType": "Table",
-      "name": "Role",
-      "nullables": [
-        "id",
-        "builtin",
-        "membershipEnabled",
-        "name",
-        "normalizedName"
-      ],
+      "name": "Notas",
       "position": {
-        "x": 50,
-        "y": 65.68254089355469
+        "x": 802,
+        "y": 626
       },
-      "primaryKeys": [
-        "id"
-      ],
       "queries": [],
-      "requireds": [],
-      "restSecurity": {
-        "delete": "Administrators",
-        "get": "Administrators",
-        "post": "Administrators",
-        "put": "Administrators"
-      },
+      "realName": "",
+      "restSecurity": null,
       "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
-      "sequences": [
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
       "size": {
-        "height": 140.4170379638672,
-        "width": 188.078125
+        "height": 130,
+        "width": 195
       },
-      "tableName": "ROLE",
+      "swagger": false,
+      "tableName": "",
+      "tableScheme": null,
       "type": "uml.Class",
-      "uniqueKeys": [],
-      "z": 2
+      "usePhysicalNames": false,
+      "z": 21
     },
     {
       "angle": 0,
@@ -1429,39 +1682,44 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
-          "height": 90,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 80,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\nrole\nsecurable\n"
+          "text": "* id\nrole\nsecurable\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 83.578125,
+          "ref-x": 142,
           "text": "Texto\nRole\nSecurable\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
-          "height": 30,
-          "transform": "translate(0,140)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,120)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "text": "RoleSecurable"
         },
         "rect": {
@@ -1605,7 +1863,7 @@
         "post": "Administrators",
         "put": "Administrators"
       },
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "sequences": [
         "",
@@ -1613,13 +1871,13 @@
         ""
       ],
       "size": {
-        "height": 118.69715118408203,
-        "width": 152
+        "height": 130,
+        "width": 207
       },
       "tableName": "ROLE_SECURABLE",
       "type": "uml.Class",
       "uniqueKeys": [],
-      "z": 2
+      "z": 20
     },
     {
       "angle": 0,
@@ -1822,35 +2080,44 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "height": 370,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 360,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\naccessFailedCount\nemail\nemailConfirmed\nlockoutEnabled\nlockoutEnd\nname\nnormalizedEmail\nnormalizedUserName\npassword\nphoneNumber\nphoneNumberConfirmed\nsecurityStamp\ntwoFactorEnabled\nuserName\ntheme\npicture\n"
+          "text": "* id\naccessFailedCount\nemail\nemailConfirmed\nlockoutEnabled\nlockoutEnd\nname\nnormalizedEmail\nnormalizedUserName\npassword\nphoneNumber\nphoneNumberConfirmed\nsecurityStamp\ntwoFactorEnabled\nuserName\ntheme\npicture\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 156.34375,
+          "ref-x": 123,
           "text": "Texto\nInteiro\nTexto\nLógico\nLógico\nData e Hora\nTexto\nTexto\nTexto\nTexto\nTexto\nLógico\nTexto\nLógico\nTexto\nTexto\nImagem no Banco\n"
         },
         ".uml-class-methods-rect": {
-          "height": 30,
-          "transform": "translate(0,420)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,400)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "text": "User"
         },
         "rect": {
@@ -2461,8 +2728,8 @@
         ""
       ],
       "size": {
-        "height": 271.78211975097656,
-        "width": 264.5
+        "height": 270,
+        "width": 231
       },
       "tableName": "USER",
       "type": "uml.Class",
@@ -2478,39 +2745,44 @@
       ],
       "attrs": {
         ".uml-class-attrs-rect": {
-          "fill": "#fffec0",
-          "height": 90,
-          "transform": "translate(0,50)"
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 80,
+          "stroke": "#C2C2C2",
+          "transform": "translate(0,40)"
         },
         ".uml-class-attrs-text": {
-          "fill": "#000",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "text": "id\nrole\nuser\n"
+          "text": "* id\nrole\nuser\n"
         },
         ".uml-class-attrs-value": {
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
-          "ref-x": 60.828125,
+          "ref-x": 156,
           "text": "Texto\nRole\nUser\n"
         },
         ".uml-class-methods-rect": {
-          "fill": "#fffec0",
-          "height": 30,
-          "transform": "translate(0,140)"
+          "fill": "#F0F0F0",
+          "height": 20,
+          "stroke": "#C2C2C2",
+          "stroke-width": 1,
+          "transform": "translate(0,120)"
         },
         ".uml-class-methods-text": {
-          "fill": "#0066FF",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "font-size": 11,
           "text": ""
         },
         ".uml-class-name-rect": {
-          "fill": "#fffec0",
-          "height": 50,
+          "fill": "#F0F0F0",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
+          "height": 40,
+          "stroke": "#C2C2C2",
           "transform": "translate(0,0)"
         },
         ".uml-class-name-text": {
-          "fill": "#000",
-          "font-size": 12,
-          "font-weight": "bold",
+          "font-family": "\u0027Fira Sans\u0027, sans-serif",
           "text": "UserRole"
         },
         "rect": {
@@ -2654,7 +2926,7 @@
         "post": "Administrators",
         "put": "Administrators"
       },
-      "role": "AssociationClass",
+      "role": "Class",
       "runtimeClass": "cronos.widgets.joint.uml.Class",
       "sequences": [
         "",
@@ -2662,8 +2934,8 @@
         ""
       ],
       "size": {
-        "height": 118.69715118408203,
-        "width": 106.015625
+        "height": 130,
+        "width": 195
       },
       "tableName": "USER_ROLE",
       "type": "uml.Class",
@@ -3643,7 +3915,8 @@
     {
       "name": "Security",
       "id": "841bf2db-1dee-49fa-b19d-991b2ed50e4f",
-      "cells": []
+      "cells": [],
+      "groupPositions": []
     },
     {
       "name": "",
@@ -3651,6 +3924,7 @@
       "cells": [
         "2b76b50a-bb57-4354-a653-b71b1450ebff",
         "36b875ac-204a-4346-82e4-aabbd2c6b202",
+        "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
         "2016ad54-a0f9-4337-ad10-694a48f0435c",
         "dcc00b32-aa33-47bd-bc4d-91da88f25cbc",
         "4cbe47fe-4f4b-43e9-960b-4b5cc2633aef",
@@ -3658,6 +3932,50 @@
         "fbe4a477-8332-4235-a9a2-5db4a56fa3d0",
         "e35a650f-29ee-4683-8c1c-5cc61a955ddf",
         "63e82a31-b1a8-491a-a527-09f8cae44ddb"
+      ],
+      "groupPositions": [
+        {
+          "idCell": "fbe4a477-8332-4235-a9a2-5db4a56fa3d0",
+          "position": {
+            "x": 416,
+            "y": 562
+          }
+        },
+        {
+          "idCell": "dcc00b32-aa33-47bd-bc4d-91da88f25cbc",
+          "position": {
+            "x": 50,
+            "y": 65
+          }
+        },
+        {
+          "idCell": "53b97115-f8a3-4221-9ce6-bad2672b8bd5",
+          "position": {
+            "x": 302,
+            "y": 365
+          }
+        },
+        {
+          "idCell": "6ae5c42b-dfc3-479b-9861-fc07dbc756fc",
+          "position": {
+            "x": 802,
+            "y": 626
+          }
+        },
+        {
+          "idCell": "63e82a31-b1a8-491a-a527-09f8cae44ddb",
+          "position": {
+            "x": 62,
+            "y": 646
+          }
+        },
+        {
+          "idCell": "36b875ac-204a-4346-82e4-aabbd2c6b202",
+          "position": {
+            "x": 58,
+            "y": 365
+          }
+        }
       ]
     }
   ]
