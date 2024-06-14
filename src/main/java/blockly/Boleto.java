@@ -65,6 +65,9 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
    private Var venda = Var.VAR_NULL;
    private Var nomeArquivo = Var.VAR_NULL;
    private Var erro = Var.VAR_NULL;
+   private Var numeroConvenio = Var.VAR_NULL;
+   private Var numeroComplemento = Var.VAR_NULL;
+   private Var nossoNumero = Var.VAR_NULL;
 
    public Var call() throws Exception {
     try {
@@ -72,6 +75,9 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
         cronapi.dateTime.Operations.getNowNoHour();
         mapa =
         Var.valueOf(consultarDadosVenda(vendaId));
+        numeroConvenio = Var.valueOf("1207113");
+        numeroComplemento = Var.valueOf(9000206);
+        nossoNumero = Var.valueOf(Var.valueOf(numeroConvenio) + String.format("%010d", numeroComplemento.getObjectAsLong()));
         cliente =
         cronapi.map.Operations.getMapField(mapa,
         Var.valueOf("cliente"));
@@ -121,7 +127,7 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
             Var.valueOf("4"),
             Var.valueOf("76000"),
             Var.valueOf("5"),
-            Var.valueOf("1207113"),
+            Var.valueOf(numeroConvenio),
             Var.valueOf("18"),
             paymentslip.PaymentSlip.createAddress(
             Var.valueOf("Avenida Roque Petroni Jr, 999, 13º andar"),
@@ -129,7 +135,7 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
             Var.valueOf("CEP: 04707-910"),
             Var.valueOf("São Paulo"),
             Var.valueOf("SP")),
-            Var.valueOf("9000206")),
+            Var.valueOf(nossoNumero)),
             paymentslip.PaymentSlip.createPayer(
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cpf")),
