@@ -2,7 +2,12 @@ package blockly;
 
 import cronapi.*;
 import cronapi.rest.security.CronappSecurity;
+import net.sf.jasperreports.engine.JRException;
+import paymentslip.PaymentSlip;
+
+import java.util.Arrays;
 import java.util.concurrent.Callable;
+import java.util.stream.IntStream;
 
 
 @CronapiMetaData(type = "blockly")
@@ -65,9 +70,6 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
    private Var venda = Var.VAR_NULL;
    private Var nomeArquivo = Var.VAR_NULL;
    private Var erro = Var.VAR_NULL;
-   private Var numeroConvenio = Var.VAR_NULL;
-   private Var numeroComplemento = Var.VAR_NULL;
-   private Var nossoNumero = Var.VAR_NULL;
 
    public Var call() throws Exception {
     try {
@@ -75,9 +77,6 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
         cronapi.dateTime.Operations.getNowNoHour();
         mapa =
         Var.valueOf(consultarDadosVenda(vendaId));
-        numeroConvenio = Var.valueOf("1207113");
-        numeroComplemento = Var.valueOf(9000206);
-        nossoNumero = Var.valueOf(Var.valueOf(numeroConvenio) + String.format("%010d", numeroComplemento.getObjectAsLong()));
         cliente =
         cronapi.map.Operations.getMapField(mapa,
         Var.valueOf("cliente"));
@@ -121,21 +120,22 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
             cronapi.dateTime.Operations.getDay(dataAtual),
             cronapi.dateTime.Operations.getMonth(dataAtual),
             cronapi.dateTime.Operations.getYear(dataAtual))),
-            paymentslip.PaymentSlip.createFavored(
-            Var.valueOf("Cronapp"),
-            Var.valueOf("1824"),
-            Var.valueOf("4"),
-            Var.valueOf("76000"),
-            Var.valueOf("5"),
-            Var.valueOf(numeroConvenio),
-            Var.valueOf("18"),
-            paymentslip.PaymentSlip.createAddress(
-            Var.valueOf("Avenida Roque Petroni Jr, 999, 13º andar"),
-            Var.valueOf("Jardim das Acácias"),
-            Var.valueOf("CEP: 04707-910"),
-            Var.valueOf("São Paulo"),
-            Var.valueOf("SP")),
-            Var.valueOf(nossoNumero)),
+                    PaymentSlip.createFavored(
+                            Var.valueOf("Cronapp"),
+                            Var.valueOf("1824"),
+                            Var.valueOf("4"),
+                            Var.valueOf("76000"),
+                            Var.valueOf("5"),
+                            Var.valueOf("1207113"),
+                            Var.valueOf("18"),
+                            PaymentSlip.createAddress(
+                                    Var.valueOf("Avenida Roque Petroni Jr, 999, 13º andar"),
+                                    Var.valueOf("Jardim das Acácias"),
+                                    Var.valueOf("CEP: 04707-910"),
+                                    Var.valueOf("São Paulo"),
+                                    Var.valueOf("SP")),
+                            Var.valueOf(Var.valueOf(gerarNossoNumero17Posicoes("1207113",900206L)))
+                    ),
             paymentslip.PaymentSlip.createPayer(
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cpf")),
@@ -199,6 +199,28 @@ public static Var validar(@ParamMetaData(description = "status", id = "989276a4"
     return retorno;
    }
  }.call();
+}
+
+private static String gerarNossoNumero17Posicoes(String convenio, long sequencial) {
+    return convenio + String.format("%010d", sequencial);
+}
+
+private static String gerarDigitoVerificadorNossoNumero17PosicoesBB(String nossoNumero) {
+    StringBuilder strgDigVerificador = new StringBuilder();
+
+    int soma = IntStream.range(0, nossoNumero.length())
+            .map(i -> Character.getNumericValue(nossoNumero.charAt(nossoNumero.length() - 1 - i)) * (9 - i % 8))
+            .sum();
+
+    int resto = soma % 11;
+    int digitoVerificador = (resto < 10) ? resto : 0;
+
+    if (resto >= 10) {
+        strgDigVerificador.append("X");
+    }
+    strgDigVerificador.append(digitoVerificador);
+
+    return strgDigVerificador.toString();
 }
 
 }
