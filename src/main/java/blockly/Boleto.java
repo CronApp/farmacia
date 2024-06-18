@@ -134,7 +134,7 @@ public static void emitir(@ParamMetaData(description = "vendaId", id = "c268f7e1
                                     Var.valueOf("CEP: 04707-910"),
                                     Var.valueOf("São Paulo"),
                                     Var.valueOf("SP")),
-                            Var.valueOf(Var.valueOf(gerarNossoNumero17Posicoes("1207113",900206L)))
+                            Var.valueOf(Var.valueOf(gerarNossoNumero("BANCO_DO_BRASIL","1207113",900206L, "","","")))
                     ),
             paymentslip.PaymentSlip.createPayer(
             cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
@@ -201,27 +201,51 @@ public static Var validar(@ParamMetaData(description = "status", id = "989276a4"
  }.call();
 }
 
-private static String gerarNossoNumero17Posicoes(String convenio, long sequencial) {
-    return convenio + String.format("%010d", sequencial);
-}
-
-private static String gerarDigitoVerificadorNossoNumero17PosicoesBB(String nossoNumero) {
-    StringBuilder strgDigVerificador = new StringBuilder();
-
-    int soma = IntStream.range(0, nossoNumero.length())
-            .map(i -> Character.getNumericValue(nossoNumero.charAt(nossoNumero.length() - 1 - i)) * (9 - i % 8))
-            .sum();
-
-    int resto = soma % 11;
-    int digitoVerificador = (resto < 10) ? resto : 0;
-
-    if (resto >= 10) {
-        strgDigVerificador.append("X");
+    public static String gerarNossoNumero17PosicoesBB(String agreement, long sequential) {
+        return agreement + String.format("%010d", sequential);
     }
-    strgDigVerificador.append(digitoVerificador);
 
-    return strgDigVerificador.toString();
-}
+    public static String gerarDigitoNossoNumeroBB(String number) {
+        StringBuilder strDigitNumber = new StringBuilder();
+
+        int sum = IntStream.range(0, number.length())
+                .map(i -> Character.getNumericValue(number.charAt(number.length() - 1 - i)) * (9 - i % 8))
+                .sum();
+
+        int rest = sum % 11;
+        int digitNumber = (rest < 10) ? rest : 0;
+
+        if (rest >= 10) {
+            strDigitNumber.append("X");
+        } else {
+            strDigitNumber.append(digitNumber);
+        }
+
+        return strDigitNumber.toString();
+    }
+
+    public static String gerarNossoNumero (String bank, String agreement, long sequential, String agency, String account, String wallet) {
+        String numberReturn = "";
+        StringBuilder sb = new StringBuilder();
+
+        if ("BANCO_DO_BRASIL".equals(bank)){
+            if ((agreement.length() == 4 || agreement.length() == 6) && !agency.isEmpty() && !account.isEmpty() && !wallet.isEmpty()) {
+                sb.append(agreement)
+                        .append(sequential)
+                        .append(agency)
+                        .append(account)
+                        .append(wallet);
+                numberReturn = sb.toString();
+            }
+            else if (agreement.length() == 7) {
+                numberReturn = gerarNossoNumero17PosicoesBB(agreement, sequential);
+            }
+        } else {
+            numberReturn = sb.append(sequential).toString();
+        }
+
+        return numberReturn;
+    }
 
 }
 
