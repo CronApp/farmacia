@@ -46,7 +46,6 @@
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
             <property name="eclipselink.cache.shared.default" value="false"/>
             <property name="eclipselink.query-results-cache" value="false"/>
-            <property name="cronapp.diagram.namespace" value="farmacia"/>
         </properties>
     </persistence-unit>
 </persistence>
