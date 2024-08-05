@@ -36,64 +36,72 @@
         <div ng-show="Produto.editing || Produto.inserting">
             <form crn-datasource="Produto">
                 <div class="list" ng-disabled="!Produto.editing &amp;&amp; !Produto.inserting">
-            <!-- codigo begin -->
-            <label for="textinput-codigo-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">{{'Codigo' | translate}}</span>
-                <input aria-label="Código" type="integer" placeholder="{{'Codigo' | translate}}" ng-model="Produto.active.codigo" id="textinput-codigo-30253" name="textinput-codigo" mask="" required="required">
-            </label>
-            <!-- nome begin -->
-            <label for="textinput-nome-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">{{'Nome' | translate}}</span>
-                <input type="text" placeholder="{{'Nome' | translate}}" ng-model="Produto.active.nome" id="textinput-nome-30253" name="textinput-nome" mask="" required="required">
-            </label>
-            <!-- precoCusto begin -->
-            <label for="textinput-precoCusto-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">{{'PrecoDeCusto' | translate}}</span>
-                <input aria-label="Preço de custo" type="money-decimal" placeholder="{{'PrecoDeCusto' | translate}}" ng-model="Produto.active.precoCusto" id="textinput-precoCusto-30253" name="textinput-precoCusto" mask="" required="required">
-            </label>
-            <!-- precoVenda begin -->
-            <label for="textinput-precoVenda-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">{{'PrecoDeVenda' | translate}}</span>
-                <input aria-label="Preço de Venda" type="money-decimal" placeholder="{{'PrecoDeVenda' | translate}}" ng-model="Produto.active.precoVenda" id="textinput-precoVenda-30253" name="textinput-precoVenda" mask="" required="required">
-            </label>
-            <!-- categoria begin -->
-            <datasource data-component="crn-datasource" name="Categoria" entity="farmacia.Categoria" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
-            <label for="textinput-categoria" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-categoria">
-                <span class="input-label">{{'Categoria' | translate}}</span>
-                <select aria-label="Categoria" crn-datasource="Categoria" ng-model="Produto.active.categoria" class="form-control" id="dynamic-categoria" name="dynamic-categoria" xkey-field="_objectKey" xdisplay-field="nome" required="required">
-                    <option value="">None</option>
-                </select>
-            </label>
-            <!-- marca begin -->
-            <datasource data-component="crn-datasource" name="Marca" entity="farmacia.Marca" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
-            <label for="textinput-marca" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-marca">
-                <span class="input-label">{{'Marca' | translate}}</span>
-                <select aria-label="Marca" crn-datasource="Marca" ng-model="Produto.active.marca" class="form-control" id="dynamic-marca" name="dynamic-marca" xkey-field="_objectKey" xdisplay-field="nome" required="required">
-                    <option value="">None</option>
-                </select>
-            </label>
-            <!-- fornecedor begin -->
-            <datasource data-component="crn-datasource" name="Fornecedor" entity="farmacia.Fornecedor" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
-            <label for="textinput-fornecedor" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-fornecedor">
-                <span class="input-label">{{'Fornecedor' | translate}}</span>
-                <select aria-label="Fornecedor" crn-datasource="Fornecedor" ng-model="Produto.active.fornecedor" class="form-control" id="dynamic-fornecedor" name="dynamic-fornecedor" xkey-field="_objectKey" xdisplay-field="nome" required="required">
-                    <option value="">None</option>
-                </select>
-            </label>
-            <!-- foto begin -->
-              <div class="item item-input item-stacked-label component-holder" data-component="crn-dynamic-image" id="crn-dynamic-image-foto" crn-skin="css/skins/farmacia.css">
-                  <label class="input-label">{{'Foto' | translate}}</label>
-                  <div class="form-group">
-                      <div alt="Foto" dynamic-image="" ng-model="Produto.active.foto" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
-                          {{"template.crud.clickOrDragAnImage" | translate}}
+                    <!-- codigo begin -->
+                    <label for="textinput-codigo-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
+                        <span class="input-label">{{'Codigo' | translate}}</span>
+                        <input aria-label="Código" type="integer" placeholder="{{'Codigo' | translate}}" ng-model="Produto.active.codigo" id="textinput-codigo-30253" name="textinput-codigo" mask="" required="required">
+                    </label>
+                    <!-- nome begin -->
+                    <label for="textinput-nome-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
+                        <span class="input-label">{{'Nome' | translate}}</span>
+                        <input type="text" placeholder="{{'Nome' | translate}}" ng-model="Produto.active.nome" id="textinput-nome-30253" name="textinput-nome" mask="" required="required">
+                    </label>
+                    <!-- precoCusto begin -->
+                    <label for="textinput-precoCusto-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
+                        <span class="input-label">{{'PrecoDeCusto' | translate}}</span>
+                        <input aria-label="Preço de custo" type="money-decimal" placeholder="{{'PrecoDeCusto' | translate}}" ng-model="Produto.active.precoCusto" id="textinput-precoCusto-30253" name="textinput-precoCusto" mask="" required="required">
+                    </label>
+                    <!-- precoVenda begin -->
+                    <label for="textinput-precoVenda-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
+                        <span class="input-label">{{'PrecoDeVenda' | translate}}</span>
+                        <input aria-label="Preço de Venda" type="money-decimal" placeholder="{{'PrecoDeVenda' | translate}}" ng-model="Produto.active.precoVenda" id="textinput-precoVenda-30253" name="textinput-precoVenda" mask="" required="required">
+                    </label>
+                    <!-- categoria begin -->
+                    <datasource data-component="crn-datasource" name="Categoria" entity="farmacia.Categoria" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
+                    <label for="textinput-categoria" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-categoria">
+                        <span class="input-label">{{'Categoria' | translate}}</span>
+                        <select aria-label="Categoria" crn-datasource="Categoria" ng-model="Produto.active.categoria" class="form-control" id="dynamic-categoria" name="dynamic-categoria" xkey-field="_objectKey" xdisplay-field="nome" required="required">
+                            <option value="">None</option>
+                        </select>
+                    </label>
+                    <!-- marca begin -->
+                    <datasource data-component="crn-datasource" name="Marca" entity="farmacia.Marca" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
+                    <label for="textinput-marca" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-marca">
+                        <span class="input-label">{{'Marca' | translate}}</span>
+                        <select aria-label="Marca" crn-datasource="Marca" ng-model="Produto.active.marca" class="form-control" id="dynamic-marca" name="dynamic-marca" xkey-field="_objectKey" xdisplay-field="nome" required="required">
+                            <option value="">None</option>
+                        </select>
+                    </label>
+                    <!-- fornecedor begin -->
+                    <datasource data-component="crn-datasource" name="Fornecedor" entity="farmacia.Fornecedor" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
+                    <label for="textinput-fornecedor" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-fornecedor">
+                        <span class="input-label">{{'Fornecedor' | translate}}</span>
+                        <select aria-label="Fornecedor" crn-datasource="Fornecedor" ng-model="Produto.active.fornecedor" class="form-control" id="dynamic-fornecedor" name="dynamic-fornecedor" xkey-field="_objectKey" xdisplay-field="nome" required="required">
+                            <option value="">None</option>
+                        </select>
+                    </label>
+                    <!-- foto begin -->
+                    <div class="item item-input item-stacked-label component-holder" data-component="crn-dynamic-image" id="crn-dynamic-image-foto" crn-skin="css/skins/farmacia.css">
+                      <label class="input-label">{{'Foto' | translate}}</label>
+                      <div class="form-group">
+                          <div alt="Foto" dynamic-image="" ng-model="Produto.active.foto" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                              {{"template.crud.clickOrDragAnImage" | translate}}
+                          </div>
                       </div>
-                  </div>
-              </div>
-
+                    </div>
+                    <!-- checkbox remedio -->
+                     <ul class="item" data-component="crn-checkbox" style="padding: 24px 0; margin: 10px 0;" id="crn-checkbox-970171">
+                        <li class="item-checkbox checkbox-default" xattr-theme="checkbox-default">
+                            <label class="checkbox" style="display: flex; align-items: center; width: 100%; cursor: pointer;">
+                                <input aria-label="Aria Label Text" type="checkbox" ng-model="Produto.active.controlado" ng-initial-value="false" crn-allow-null-values="true" style="margin-right: 10px;">
+                                <span>Remédio controlado?</span>
+                            </label>
+                        </li>
+                    </ul>
                     <!-- NtoN  -->
                     <!-- NtoN  end-->
-            
-        </div></form>
-    
-
-</div></ion-content></ion-view>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
