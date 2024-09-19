@@ -98,27 +98,33 @@ window.blockly.js.blockly.Pedido.excluir = async function(index) {
  *
  */
 window.blockly.js.blockly.Pedido.inserirArgs = [{ description: 'produto', id: 'a45db1d1' }, { description: 'quantidade', id: '2fdcf9d7' }];
-window.blockly.js.blockly.Pedido.inserir = async function(produto, quantidade) {
-
+window.blockly.js.blockly.Pedido.inserir = async function(produtoId, quantidade) {
+  // 
+  var produtos = angular.element(document.querySelector('button[ng-click*="Pedido.inserir"]')).scope().data.Produto.data
   //
-  if (!this.cronapi.logic.isNullOrEmpty(produto) && !this.cronapi.logic.isNullOrEmpty(quantidade)) {
+  var produtoSelecionado = produtos.find(function(produto) {
+    return produto.id === produtoId;
+  });
+  // 
+  if (produtoSelecionado && quantidade > 0) {
     //
-    if (quantidade > 0) {
-      //
-      item = this.cronapi.object.newObject();
-      //
-      this.cronapi.object.setProperty(item, 'produto', produto);
-      //
-      this.cronapi.object.setProperty(item, 'quantidade', quantidade);
-      //
-      this.cronapi.screen.getScopeVariable('listaItensPedido').push(item);
-      //
-      (await this.cronapi.client('blockly.js.blockly.Pedido.limparVariaveis').run());
-      //
-      (await this.cronapi.client('blockly.js.blockly.Pedido.calcularTotal').run());
+    let item = this.cronapi.object.newObject();
+    //
+    this.cronapi.object.setProperty(item, 'produto', produtoSelecionado);
+    //
+    this.cronapi.object.setProperty(item, 'quantidade', quantidade);
+    //
+    this.cronapi.screen.getScopeVariable('listaItensPedido').push(item);
+    //
+    await this.cronapi.client('blockly.js.blockly.Pedido.limparVariaveis').run();
+    await this.cronapi.client('blockly.js.blockly.Pedido.calcularTotal').run();
+  } else {
+   //
+    if (!produtoSelecionado) {
+      this.cronapi.screen.notify('error', 'Produto não encontrado');
     } else {
-      //
-      this.cronapi.screen.notify('warning','Quantidade tem que ser maior que 0');
+     //
+      this.cronapi.screen.notify('warning', 'Quantidade tem que ser maior que 0');
     }
   }
 }
