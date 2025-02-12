@@ -3,7 +3,7 @@
     <parent>
         <artifactId>cronapp-framework-spring</artifactId>
         <groupId>io.cronapp</groupId>
-        <version>3.0.0-SP.28</version>
+        <version>3.2.1-SP.2</version>
         <relativePath></relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,7 +16,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -34,7 +34,7 @@
                 </excludes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -139,10 +139,6 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapi-apm</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.cronapp</groupId>
-            <artifactId>boleto</artifactId>
         </dependency>
         <dependency>
             <groupId>io.cronapp</groupId>

@@ -3,6 +3,7 @@ package blockly.chatbot;
 import cronapi.*;
 import cronapi.rest.security.CronappSecurity;
 import java.util.concurrent.Callable;
+import org.springframework.web.bind.annotation.*;
 
 
 @CronapiMetaData(type = "blockly")
@@ -18,11 +19,11 @@ public static final int TIMEOUT = 300;
  * @param context
  * @param msg
  *
- * @author Igor Andrade
- * @since 26/09/2023, 09:48:15
+ * @author Alan Moraes Souza
+ * @since 12/02/2025, 16:13:58
  *
  */
-public static Var enviarMensagem(@ParamMetaData(description = "context", id = "c5d5631e") Var context, @ParamMetaData(description = "msg", id = "69c2571a") Var msg) throws Exception {
+public static Var enviarMensagem(@ParamMetaData(description = "context", id = "c5d5631e") @RequestBody(required = false) Var context, @ParamMetaData(description = "msg", id = "69c2571a") Var msg) throws Exception {
  return new Callable<Var>() {
 
    private Var watson = Var.VAR_NULL;
@@ -59,11 +60,11 @@ Var.valueOf("chatbot")));
  *
  * @param watson
  *
- * @author Igor Andrade
- * @since 26/09/2023, 09:48:15
+ * @author Alan Moraes Souza
+ * @since 12/02/2025, 16:13:58
  *
  */
-public static Var filtarIntencao(@ParamMetaData(description = "param_watson", id = "a5bcd5e2") Var param_watson) throws Exception {
+public static Var filtarIntencao(@ParamMetaData(description = "param_watson", id = "a5bcd5e2") @RequestBody(required = false) Var param_watson) throws Exception {
  return new Callable<Var>() {
 
    // param
@@ -168,15 +169,6 @@ public static Var filtarIntencao(@ParamMetaData(description = "param_watson", id
         Var.valueOf("").getTypedObject(java.lang.String.class), Var.VAR_NULL.getTypedObject(java.util.Map.class),
         cronapi.object.Operations.newObject(Var.valueOf("com.ibm.watson.developer_cloud.conversation.v1.model.MessageOptions"),Var.valueOf("workspaceId",
         Var.valueOf("2b8372ac-2843-4a6c-938c-a6abf02db247")),Var.valueOf("context",context)).getTypedObject(com.ibm.watson.developer_cloud.conversation.v1.model.MessageOptions.class)));
-        if (
-        cronapi.logic.Operations.isNullOrEmpty(
-        cronapi.json.Operations.getJsonOrMapField(context,
-        Var.valueOf("idVenda")))
-        .negate().getObjectAsBoolean()) {
-            cronapi.util.Operations.callBlockly(Var.valueOf("blockly.Boleto:emitir"),
-            cronapi.json.Operations.getJsonOrMapField(context,
-            Var.valueOf("idVenda")));
-        }
     }
     return watson;
    }
@@ -187,8 +179,8 @@ public static Var filtarIntencao(@ParamMetaData(description = "param_watson", id
  *
  * Watson
  *
- * @author Igor Andrade
- * @since 26/09/2023, 09:48:15
+ * @author Alan Moraes Souza
+ * @since 12/02/2025, 16:13:58
  *
  */
 public static Var iniciar() throws Exception {
