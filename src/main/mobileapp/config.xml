@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cronapp.apps.farmacianovo" version="1.0.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="io.cronapp.apps.farmacianovo" version="1.0.0">
     <name>farmacia-novo</name>
     <description>farmacia-novo</description>
     <author email="samuel.almeida@cronapp.io" href="http://cronapp.io">Samuel Almeida</author>
@@ -135,5 +136,5 @@
             <string>The App would like to have access to user’s Reminders in order to show and add new appointments.</string>
         </edit-config>
     </platform>
-    <plugin name="cordova-plugin-cronapp" spec="3.2.1-SP.2"/>
+    <plugin name="cordova-plugin-cronapp" spec="4.2.24"/>
 </widget>
