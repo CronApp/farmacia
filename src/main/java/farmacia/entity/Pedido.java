@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela PEDIDO
 * @generated
 */
-@Entity
-@Table(name = "\"PEDIDO\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"PEDIDO\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.Pedido")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.AUTO)
 public class Pedido implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,15 +36,19 @@ public class Pedido implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = true, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Quantidade")
     @Column(name = "quantidade", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer quantidade;
+
 
     /**
     * @generated
@@ -49,6 +58,7 @@ public class Pedido implements Serializable {
         
         private Produto produto;
 
+
     /**
     * @generated
     */
@@ -56,6 +66,7 @@ public class Pedido implements Serializable {
     @JoinColumn(name="fk_venda", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Venda venda;
+
 
     /**
     * Construtor
@@ -69,8 +80,7 @@ public class Pedido implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -79,7 +89,7 @@ public class Pedido implements Serializable {
     * @param id id
     * @generated
     */
-    public Pedido setId(java.lang.String id){
+    public Pedido setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -88,8 +98,7 @@ public class Pedido implements Serializable {
     * return quantidade
     * @generated
     */
-    
-    public java.lang.Integer getQuantidade(){
+    public java.lang.Integer getQuantidade() {
         return this.quantidade;
     }
 
@@ -98,7 +107,7 @@ public class Pedido implements Serializable {
     * @param quantidade quantidade
     * @generated
     */
-    public Pedido setQuantidade(java.lang.Integer quantidade){
+    public Pedido setQuantidade(java.lang.Integer quantidade) {
         this.quantidade = quantidade;
         return this;
     }
@@ -107,8 +116,7 @@ public class Pedido implements Serializable {
     * return produto
     * @generated
     */
-    
-    public Produto getProduto(){
+    public Produto getProduto() {
         return this.produto;
     }
 
@@ -117,7 +125,7 @@ public class Pedido implements Serializable {
     * @param produto produto
     * @generated
     */
-    public Pedido setProduto(Produto produto){
+    public Pedido setProduto(Produto produto) {
         this.produto = produto;
         return this;
     }
@@ -126,8 +134,7 @@ public class Pedido implements Serializable {
     * return venda
     * @generated
     */
-    
-    public Venda getVenda(){
+    public Venda getVenda() {
         return this.venda;
     }
 
@@ -136,7 +143,7 @@ public class Pedido implements Serializable {
     * @param venda venda
     * @generated
     */
-    public Pedido setVenda(Venda venda){
+    public Pedido setVenda(Venda venda) {
         this.venda = venda;
         return this;
     }

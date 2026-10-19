@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela CLIENTEVENDA
 * @generated
 */
-@Entity
-@Table(name = "\"CLIENTEVENDA\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"CLIENTEVENDA\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.ClienteVenda")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.ASSOCIATION_CLASS)
 public class ClienteVenda implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,8 +36,10 @@ public class ClienteVenda implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
@@ -42,6 +49,7 @@ public class ClienteVenda implements Serializable {
         
         private Cliente cliente;
 
+
     /**
     * @generated
     */
@@ -49,6 +57,7 @@ public class ClienteVenda implements Serializable {
     @JoinColumn(name="fk_venda", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Venda venda;
+
 
     /**
     * Construtor
@@ -62,8 +71,7 @@ public class ClienteVenda implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -72,7 +80,7 @@ public class ClienteVenda implements Serializable {
     * @param id id
     * @generated
     */
-    public ClienteVenda setId(java.lang.String id){
+    public ClienteVenda setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -81,8 +89,7 @@ public class ClienteVenda implements Serializable {
     * return cliente
     * @generated
     */
-    
-    public Cliente getCliente(){
+    public Cliente getCliente() {
         return this.cliente;
     }
 
@@ -91,7 +98,7 @@ public class ClienteVenda implements Serializable {
     * @param cliente cliente
     * @generated
     */
-    public ClienteVenda setCliente(Cliente cliente){
+    public ClienteVenda setCliente(Cliente cliente) {
         this.cliente = cliente;
         return this;
     }
@@ -100,8 +107,7 @@ public class ClienteVenda implements Serializable {
     * return venda
     * @generated
     */
-    
-    public Venda getVenda(){
+    public Venda getVenda() {
         return this.venda;
     }
 
@@ -110,7 +116,7 @@ public class ClienteVenda implements Serializable {
     * @param venda venda
     * @generated
     */
-    public ClienteVenda setVenda(Venda venda){
+    public ClienteVenda setVenda(Venda venda) {
         this.venda = venda;
         return this;
     }

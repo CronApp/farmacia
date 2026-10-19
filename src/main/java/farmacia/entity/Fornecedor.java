@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela FORNECEDOR
 * @generated
 */
-@Entity
-@Table(name = "\"FORNECEDOR\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"FORNECEDOR\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.Fornecedor")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.AUTO)
 public class Fornecedor implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,36 +36,46 @@ public class Fornecedor implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Nome")
     @Column(name = "nome", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String nome;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Cnpj", mask="99.999.999/9999-99;0")
     @Column(name = "cnpj", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String cnpj;
 
-    /**
-    * @generated
-    */
-    @Column(name = "telefone", nullable = false, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String telefone;
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Telefone")
+    @Column(name = "telefone", nullable = false, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String telefone;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Email")
     @Column(name = "email", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String email;
+
 
     /**
     * Construtor
@@ -74,8 +89,7 @@ public class Fornecedor implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -84,7 +98,7 @@ public class Fornecedor implements Serializable {
     * @param id id
     * @generated
     */
-    public Fornecedor setId(java.lang.String id){
+    public Fornecedor setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -93,8 +107,7 @@ public class Fornecedor implements Serializable {
     * return nome
     * @generated
     */
-    
-    public java.lang.String getNome(){
+    public java.lang.String getNome() {
         return this.nome;
     }
 
@@ -103,7 +116,7 @@ public class Fornecedor implements Serializable {
     * @param nome nome
     * @generated
     */
-    public Fornecedor setNome(java.lang.String nome){
+    public Fornecedor setNome(java.lang.String nome) {
         this.nome = nome;
         return this;
     }
@@ -112,8 +125,7 @@ public class Fornecedor implements Serializable {
     * return cnpj
     * @generated
     */
-    
-    public java.lang.String getCnpj(){
+    public java.lang.String getCnpj() {
         return this.cnpj;
     }
 
@@ -122,7 +134,7 @@ public class Fornecedor implements Serializable {
     * @param cnpj cnpj
     * @generated
     */
-    public Fornecedor setCnpj(java.lang.String cnpj){
+    public Fornecedor setCnpj(java.lang.String cnpj) {
         this.cnpj = cnpj;
         return this;
     }
@@ -131,8 +143,7 @@ public class Fornecedor implements Serializable {
     * return telefone
     * @generated
     */
-    
-    public java.lang.String getTelefone(){
+    public java.lang.String getTelefone() {
         return this.telefone;
     }
 
@@ -141,7 +152,7 @@ public class Fornecedor implements Serializable {
     * @param telefone telefone
     * @generated
     */
-    public Fornecedor setTelefone(java.lang.String telefone){
+    public Fornecedor setTelefone(java.lang.String telefone) {
         this.telefone = telefone;
         return this;
     }
@@ -150,8 +161,7 @@ public class Fornecedor implements Serializable {
     * return email
     * @generated
     */
-    
-    public java.lang.String getEmail(){
+    public java.lang.String getEmail() {
         return this.email;
     }
 
@@ -160,7 +170,7 @@ public class Fornecedor implements Serializable {
     * @param email email
     * @generated
     */
-    public Fornecedor setEmail(java.lang.String email){
+    public Fornecedor setEmail(java.lang.String email) {
         this.email = email;
         return this;
     }

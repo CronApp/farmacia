@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("AuditLogDAO")
+@Repository("app-AuditLogDAO")
 @Transactional(transactionManager="app-TransactionManager")
 public interface AuditLogDAO extends JpaRepository<AuditLog, java.lang.Integer> {
 

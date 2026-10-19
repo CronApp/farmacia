@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela VENDA
 * @generated
 */
-@Entity
-@Table(name = "\"VENDA\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"VENDA\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.Venda")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.AUTO)
 public class Venda implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,31 +36,38 @@ public class Venda implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="DOUBLE", label="Valor Total")
     @Column(name = "valor", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Double valor;
+
 
     /**
     * @generated
     */
     @Temporal(TemporalType.TIMESTAMP)
+    @CronappColumn(attributeType="TIMESTAMP", label="Data", defaultValue = "Calendar.getInstance().getTime()")
     @Column(name = "data", nullable = false, unique = false, insertable=true, updatable=true, columnDefinition = "TIMESTAMP")
         
         private java.util.Date data = Calendar.getInstance().getTime();
 
+
     /**
     * @generated
     */
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="fk_statusVenda", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
         
         private StatusVenda statusVenda;
+
 
     /**
     * Construtor
@@ -69,8 +81,7 @@ public class Venda implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -79,7 +90,7 @@ public class Venda implements Serializable {
     * @param id id
     * @generated
     */
-    public Venda setId(java.lang.String id){
+    public Venda setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -88,8 +99,7 @@ public class Venda implements Serializable {
     * return valor
     * @generated
     */
-    
-    public java.lang.Double getValor(){
+    public java.lang.Double getValor() {
         return this.valor;
     }
 
@@ -98,7 +108,7 @@ public class Venda implements Serializable {
     * @param valor valor
     * @generated
     */
-    public Venda setValor(java.lang.Double valor){
+    public Venda setValor(java.lang.Double valor) {
         this.valor = valor;
         return this;
     }
@@ -107,8 +117,7 @@ public class Venda implements Serializable {
     * return data
     * @generated
     */
-    
-    public java.util.Date getData(){
+    public java.util.Date getData() {
         return this.data;
     }
 
@@ -117,7 +126,7 @@ public class Venda implements Serializable {
     * @param data data
     * @generated
     */
-    public Venda setData(java.util.Date data){
+    public Venda setData(java.util.Date data) {
         this.data = data;
         return this;
     }
@@ -126,8 +135,7 @@ public class Venda implements Serializable {
     * return statusVenda
     * @generated
     */
-    
-    public StatusVenda getStatusVenda(){
+    public StatusVenda getStatusVenda() {
         return this.statusVenda;
     }
 
@@ -136,7 +144,7 @@ public class Venda implements Serializable {
     * @param statusVenda statusVenda
     * @generated
     */
-    public Venda setStatusVenda(StatusVenda statusVenda){
+    public Venda setStatusVenda(StatusVenda statusVenda) {
         this.statusVenda = statusVenda;
         return this;
     }
