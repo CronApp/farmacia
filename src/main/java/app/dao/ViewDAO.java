@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("ViewDAO")
+@Repository("app-ViewDAO")
 @Transactional(transactionManager="app-TransactionManager")
 public interface ViewDAO extends JpaRepository<View, java.lang.String> {
 

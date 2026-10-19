@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("LoginDAO")
+@Repository("app-LoginDAO")
 @Transactional(transactionManager="app-TransactionManager")
 public interface LoginDAO extends JpaRepository<Login, java.lang.String> {
 

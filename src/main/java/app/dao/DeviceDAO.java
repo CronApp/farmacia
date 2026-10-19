@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("DeviceDAO")
+@Repository("app-DeviceDAO")
 @Transactional(transactionManager="app-TransactionManager")
 public interface DeviceDAO extends JpaRepository<Device, java.lang.String> {
 

@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela PRODUTO
 * @generated
 */
-@Entity
-@Table(name = "\"PRODUTO\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"PRODUTO\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.Produto")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.AUTO)
 public class Produto implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,74 +36,91 @@ public class Produto implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Nome")
     @Column(name = "nome", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String nome;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="INTEGER", label="Código")
     @Column(name = "codigo", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Integer codigo;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="DOUBLE", label="Preço de custo")
     @Column(name = "precoCusto", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Double precoCusto;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="DOUBLE", label="Preço de Venda")
     @Column(name = "precoVenda", nullable = false, unique = false, precision=10, scale=2, insertable=true, updatable=true)
         
         private java.lang.Double precoVenda;
 
+
     /**
     * @generated
     */
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="fk_fornecedor", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Fornecedor fornecedor;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="IMAGE_DATABASE", label="Foto")
     @Column(name = "foto", nullable = true, unique = false, insertable=true, updatable=true)
         
         private byte[] foto;
 
+
     /**
     * @generated
     */
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="categoria", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Categoria categoria;
 
-    /**
-    * @generated
-    */
-    @ManyToOne
-    @JoinColumn(name="marca", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
-        
-        private Marca marca;
 
     /**
     * @generated
     */
+    @OneToOne
+    @JoinColumn(name="marca", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private Marca marca;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="BOOLEAN", label="Controlado", defaultValue = "false")
     @Column(name = "controlado", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.Boolean controlado = false;
+
 
     /**
     * Construtor
@@ -112,8 +134,7 @@ public class Produto implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -122,7 +143,7 @@ public class Produto implements Serializable {
     * @param id id
     * @generated
     */
-    public Produto setId(java.lang.String id){
+    public Produto setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -131,8 +152,7 @@ public class Produto implements Serializable {
     * return nome
     * @generated
     */
-    
-    public java.lang.String getNome(){
+    public java.lang.String getNome() {
         return this.nome;
     }
 
@@ -141,7 +161,7 @@ public class Produto implements Serializable {
     * @param nome nome
     * @generated
     */
-    public Produto setNome(java.lang.String nome){
+    public Produto setNome(java.lang.String nome) {
         this.nome = nome;
         return this;
     }
@@ -150,8 +170,7 @@ public class Produto implements Serializable {
     * return codigo
     * @generated
     */
-    
-    public java.lang.Integer getCodigo(){
+    public java.lang.Integer getCodigo() {
         return this.codigo;
     }
 
@@ -160,7 +179,7 @@ public class Produto implements Serializable {
     * @param codigo codigo
     * @generated
     */
-    public Produto setCodigo(java.lang.Integer codigo){
+    public Produto setCodigo(java.lang.Integer codigo) {
         this.codigo = codigo;
         return this;
     }
@@ -169,8 +188,7 @@ public class Produto implements Serializable {
     * return precoCusto
     * @generated
     */
-    
-    public java.lang.Double getPrecoCusto(){
+    public java.lang.Double getPrecoCusto() {
         return this.precoCusto;
     }
 
@@ -179,7 +197,7 @@ public class Produto implements Serializable {
     * @param precoCusto precoCusto
     * @generated
     */
-    public Produto setPrecoCusto(java.lang.Double precoCusto){
+    public Produto setPrecoCusto(java.lang.Double precoCusto) {
         this.precoCusto = precoCusto;
         return this;
     }
@@ -188,8 +206,7 @@ public class Produto implements Serializable {
     * return precoVenda
     * @generated
     */
-    
-    public java.lang.Double getPrecoVenda(){
+    public java.lang.Double getPrecoVenda() {
         return this.precoVenda;
     }
 
@@ -198,7 +215,7 @@ public class Produto implements Serializable {
     * @param precoVenda precoVenda
     * @generated
     */
-    public Produto setPrecoVenda(java.lang.Double precoVenda){
+    public Produto setPrecoVenda(java.lang.Double precoVenda) {
         this.precoVenda = precoVenda;
         return this;
     }
@@ -207,8 +224,7 @@ public class Produto implements Serializable {
     * return fornecedor
     * @generated
     */
-    
-    public Fornecedor getFornecedor(){
+    public Fornecedor getFornecedor() {
         return this.fornecedor;
     }
 
@@ -217,7 +233,7 @@ public class Produto implements Serializable {
     * @param fornecedor fornecedor
     * @generated
     */
-    public Produto setFornecedor(Fornecedor fornecedor){
+    public Produto setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
         return this;
     }
@@ -226,8 +242,7 @@ public class Produto implements Serializable {
     * return foto
     * @generated
     */
-    
-    public byte[] getFoto(){
+    public byte[] getFoto() {
         return this.foto;
     }
 
@@ -236,7 +251,7 @@ public class Produto implements Serializable {
     * @param foto foto
     * @generated
     */
-    public Produto setFoto(byte[] foto){
+    public Produto setFoto(byte[] foto) {
         this.foto = foto;
         return this;
     }
@@ -245,8 +260,7 @@ public class Produto implements Serializable {
     * return categoria
     * @generated
     */
-    
-    public Categoria getCategoria(){
+    public Categoria getCategoria() {
         return this.categoria;
     }
 
@@ -255,7 +269,7 @@ public class Produto implements Serializable {
     * @param categoria categoria
     * @generated
     */
-    public Produto setCategoria(Categoria categoria){
+    public Produto setCategoria(Categoria categoria) {
         this.categoria = categoria;
         return this;
     }
@@ -264,8 +278,7 @@ public class Produto implements Serializable {
     * return marca
     * @generated
     */
-    
-    public Marca getMarca(){
+    public Marca getMarca() {
         return this.marca;
     }
 
@@ -274,7 +287,7 @@ public class Produto implements Serializable {
     * @param marca marca
     * @generated
     */
-    public Produto setMarca(Marca marca){
+    public Produto setMarca(Marca marca) {
         this.marca = marca;
         return this;
     }
@@ -283,8 +296,7 @@ public class Produto implements Serializable {
     * return controlado
     * @generated
     */
-    
-    public java.lang.Boolean getControlado(){
+    public java.lang.Boolean getControlado() {
         return this.controlado;
     }
 
@@ -293,7 +305,7 @@ public class Produto implements Serializable {
     * @param controlado controlado
     * @generated
     */
-    public Produto setControlado(java.lang.Boolean controlado){
+    public Produto setControlado(java.lang.Boolean controlado) {
         this.controlado = controlado;
         return this;
     }

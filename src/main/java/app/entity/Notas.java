@@ -4,12 +4,15 @@ package app.entity;
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
 import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela NOTAS
@@ -20,6 +23,7 @@ import cronapi.swagger.CronappSwagger;
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("app.entity.Notas")
+@CronappTable(role=CronappTableRole.CLASS)
 public class Notas implements Serializable {
     /**
     * UID da classe, necessário na serialização
@@ -31,6 +35,7 @@ public class Notas implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
@@ -38,6 +43,7 @@ public class Notas implements Serializable {
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Texto")
     @Column(name = "texto", nullable = true, unique = false, insertable=true, updatable=true)
         
         private java.lang.String texto;
@@ -47,6 +53,7 @@ public class Notas implements Serializable {
     * @generated
     */
     @Temporal(TemporalType.DATE)
+    @CronappColumn(attributeType="DATE", label="Data", defaultValue = "Calendar.getInstance().getTime()")
     @Column(name = "data", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.util.Date data = Calendar.getInstance().getTime();

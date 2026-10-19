@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.*;
  * 
  * @generated
  */
-@Repository("MarcaDAO")
+@Repository("farmacia-MarcaDAO")
 @Transactional(transactionManager="farmacia-TransactionManager")
 public interface MarcaDAO extends JpaRepository<Marca, java.lang.String> {
 

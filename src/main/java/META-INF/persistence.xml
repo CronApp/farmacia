@@ -8,28 +8,6 @@
             <property name="cronapp.diagram.namespace" value="workflow"/>
         </properties>
     </persistence-unit>
-    <persistence-unit name="app" transaction-type="RESOURCE_LOCAL">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
-        <class>app.entity.Notas</class>
-        <class>app.entity.RoleSecurable</class>
-        <class>app.entity.Securable</class>
-        <class>app.entity.UserSecurable</class>
-        <class>app.entity.UserRole</class>
-        <class>app.entity.User</class>
-        <class>app.entity.Anotacao</class>
-        <class>app.entity.Device</class>
-        <class>app.entity.Role</class>
-        <class>app.entity.AuditLog</class>
-        <class>app.entity.Login</class>
-        <class>app.entity.View</class>
-        <properties>
-            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
-            <property name="eclipselink.cache.shared.default" value="false"/>
-            <property name="eclipselink.query-results-cache" value="false"/>
-            <property name="cronapp.diagram.namespace" value="app"/>
-        </properties>
-    </persistence-unit>
     <persistence-unit name="farmacia" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
@@ -43,9 +21,32 @@
         <class>farmacia.entity.Categoria</class>
         <class>farmacia.entity.Marca</class>
         <properties>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+            <property name="cronapp.diagram.namespace" value="farmacia"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="app" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
+        <class>app.entity.RoleSecurable</class>
+        <class>app.entity.Securable</class>
+        <class>app.entity.UserSecurable</class>
+        <class>app.entity.UserRole</class>
+        <class>app.entity.Notas</class>
+        <class>app.entity.User</class>
+        <class>app.entity.Anotacao</class>
+        <class>app.entity.Device</class>
+        <class>app.entity.Role</class>
+        <class>app.entity.AuditLog</class>
+        <class>app.entity.Login</class>
+        <class>app.entity.View</class>
+        <properties>
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
             <property name="eclipselink.cache.shared.default" value="false"/>
             <property name="eclipselink.query-results-cache" value="false"/>
+            <property name="cronapp.diagram.namespace" value="app"/>
         </properties>
     </persistence-unit>
 </persistence>

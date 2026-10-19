@@ -1,26 +1,31 @@
+
 package farmacia.entity;
 
 import java.io.*;
 import jakarta.persistence.*;
 import java.util.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.swagger.CronappSwagger;
 
+
+
+import cronapp.framework.core.persistence.*;
 
 /**
 * Classe que representa a tabela CLIENTE
 * @generated
 */
-@Entity
-@Table(name = "\"CLIENTE\"")
+@jakarta.persistence.Entity
+@jakarta.persistence.Table(name = "\"CLIENTE\"")
 @XmlRootElement
 @CronappSecurity
 @JsonFilter("farmacia.entity.Cliente")
 @EntityListeners({cronapi.database.HistoryListener.class})
+@CronappTable(role=CronappTableRole.AUTO)
 public class Cliente implements Serializable {
-
     /**
     * UID da classe, necessário na serialização
     * @generated
@@ -31,78 +36,100 @@ public class Cliente implements Serializable {
     * @generated
     */
     @Id
+    @CronappColumn(attributeType="STRING", label="Id", defaultValue = "UUID.randomUUID().toString().toUpperCase()")
     @Column(name = "id", nullable = false, insertable=true, updatable=true)
         private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
+
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Nome Cliente")
     @Column(name = "nome", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String nome;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Cpf", mask="999.999.999-99;0")
     @Column(name = "cpf", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String cpf;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Telefone")
     @Column(name = "telefone", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String telefone;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Email")
     @Column(name = "email", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String email;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Cep")
     @Column(name = "cep", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String cep;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Endereco")
     @Column(name = "endereco", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String endereco;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Complemento")
     @Column(name = "complemento", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String complemento;
 
+
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Bairro")
     @Column(name = "bairro", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String bairro;
 
-    /**
-    * @generated
-    */
-    @Column(name = "cidade", nullable = false, unique = false, insertable=true, updatable=true)
-        
-        private java.lang.String cidade;
 
     /**
     * @generated
     */
+    @CronappColumn(attributeType="STRING", label="Cidade")
+    @Column(name = "cidade", nullable = false, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.String cidade;
+
+
+    /**
+    * @generated
+    */
+    @CronappColumn(attributeType="STRING", label="Uf")
     @Column(name = "uf", nullable = false, unique = false, insertable=true, updatable=true)
         
         private java.lang.String uf;
+
 
     /**
     * Construtor
@@ -116,8 +143,7 @@ public class Cliente implements Serializable {
     * return id
     * @generated
     */
-    
-    public java.lang.String getId(){
+    public java.lang.String getId() {
         return this.id;
     }
 
@@ -126,7 +152,7 @@ public class Cliente implements Serializable {
     * @param id id
     * @generated
     */
-    public Cliente setId(java.lang.String id){
+    public Cliente setId(java.lang.String id) {
         this.id = id;
         return this;
     }
@@ -135,8 +161,7 @@ public class Cliente implements Serializable {
     * return nome
     * @generated
     */
-    
-    public java.lang.String getNome(){
+    public java.lang.String getNome() {
         return this.nome;
     }
 
@@ -145,7 +170,7 @@ public class Cliente implements Serializable {
     * @param nome nome
     * @generated
     */
-    public Cliente setNome(java.lang.String nome){
+    public Cliente setNome(java.lang.String nome) {
         this.nome = nome;
         return this;
     }
@@ -154,8 +179,7 @@ public class Cliente implements Serializable {
     * return cpf
     * @generated
     */
-    
-    public java.lang.String getCpf(){
+    public java.lang.String getCpf() {
         return this.cpf;
     }
 
@@ -164,7 +188,7 @@ public class Cliente implements Serializable {
     * @param cpf cpf
     * @generated
     */
-    public Cliente setCpf(java.lang.String cpf){
+    public Cliente setCpf(java.lang.String cpf) {
         this.cpf = cpf;
         return this;
     }
@@ -173,8 +197,7 @@ public class Cliente implements Serializable {
     * return telefone
     * @generated
     */
-    
-    public java.lang.String getTelefone(){
+    public java.lang.String getTelefone() {
         return this.telefone;
     }
 
@@ -183,7 +206,7 @@ public class Cliente implements Serializable {
     * @param telefone telefone
     * @generated
     */
-    public Cliente setTelefone(java.lang.String telefone){
+    public Cliente setTelefone(java.lang.String telefone) {
         this.telefone = telefone;
         return this;
     }
@@ -192,8 +215,7 @@ public class Cliente implements Serializable {
     * return email
     * @generated
     */
-    
-    public java.lang.String getEmail(){
+    public java.lang.String getEmail() {
         return this.email;
     }
 
@@ -202,7 +224,7 @@ public class Cliente implements Serializable {
     * @param email email
     * @generated
     */
-    public Cliente setEmail(java.lang.String email){
+    public Cliente setEmail(java.lang.String email) {
         this.email = email;
         return this;
     }
@@ -211,8 +233,7 @@ public class Cliente implements Serializable {
     * return cep
     * @generated
     */
-    
-    public java.lang.String getCep(){
+    public java.lang.String getCep() {
         return this.cep;
     }
 
@@ -221,7 +242,7 @@ public class Cliente implements Serializable {
     * @param cep cep
     * @generated
     */
-    public Cliente setCep(java.lang.String cep){
+    public Cliente setCep(java.lang.String cep) {
         this.cep = cep;
         return this;
     }
@@ -230,8 +251,7 @@ public class Cliente implements Serializable {
     * return endereco
     * @generated
     */
-    
-    public java.lang.String getEndereco(){
+    public java.lang.String getEndereco() {
         return this.endereco;
     }
 
@@ -240,7 +260,7 @@ public class Cliente implements Serializable {
     * @param endereco endereco
     * @generated
     */
-    public Cliente setEndereco(java.lang.String endereco){
+    public Cliente setEndereco(java.lang.String endereco) {
         this.endereco = endereco;
         return this;
     }
@@ -249,8 +269,7 @@ public class Cliente implements Serializable {
     * return complemento
     * @generated
     */
-    
-    public java.lang.String getComplemento(){
+    public java.lang.String getComplemento() {
         return this.complemento;
     }
 
@@ -259,7 +278,7 @@ public class Cliente implements Serializable {
     * @param complemento complemento
     * @generated
     */
-    public Cliente setComplemento(java.lang.String complemento){
+    public Cliente setComplemento(java.lang.String complemento) {
         this.complemento = complemento;
         return this;
     }
@@ -268,8 +287,7 @@ public class Cliente implements Serializable {
     * return bairro
     * @generated
     */
-    
-    public java.lang.String getBairro(){
+    public java.lang.String getBairro() {
         return this.bairro;
     }
 
@@ -278,7 +296,7 @@ public class Cliente implements Serializable {
     * @param bairro bairro
     * @generated
     */
-    public Cliente setBairro(java.lang.String bairro){
+    public Cliente setBairro(java.lang.String bairro) {
         this.bairro = bairro;
         return this;
     }
@@ -287,8 +305,7 @@ public class Cliente implements Serializable {
     * return cidade
     * @generated
     */
-    
-    public java.lang.String getCidade(){
+    public java.lang.String getCidade() {
         return this.cidade;
     }
 
@@ -297,7 +314,7 @@ public class Cliente implements Serializable {
     * @param cidade cidade
     * @generated
     */
-    public Cliente setCidade(java.lang.String cidade){
+    public Cliente setCidade(java.lang.String cidade) {
         this.cidade = cidade;
         return this;
     }
@@ -306,8 +323,7 @@ public class Cliente implements Serializable {
     * return uf
     * @generated
     */
-    
-    public java.lang.String getUf(){
+    public java.lang.String getUf() {
         return this.uf;
     }
 
@@ -316,7 +332,7 @@ public class Cliente implements Serializable {
     * @param uf uf
     * @generated
     */
-    public Cliente setUf(java.lang.String uf){
+    public Cliente setUf(java.lang.String uf) {
         this.uf = uf;
         return this;
     }
